@@ -162,11 +162,11 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         container.y = s.baseY;
       });
 
-      // Reposition CODE letters proportionally
-      const xPositions = [0.38, 0.46, 0.54, 0.62];
-      const yBase = 0.50;
-      codeLetters.forEach((c, i) => {
-        const pos = getScaledPos(xPositions[i], yBase, nw, nh);
+      // Reposition letters proportionally
+      codeLetters.forEach((c) => {
+        const xPct = (c as any).__xPct;
+        const yPct = (c as any).__yPct;
+        const pos = getScaledPos(xPct, yPct, nw, nh);
         (c as any).__baseX = pos.x;
         (c as any).__baseY = pos.y;
         c.x = pos.x;

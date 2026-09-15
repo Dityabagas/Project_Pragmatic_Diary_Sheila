@@ -4,31 +4,27 @@ export const diaryCases: DiaryCase[] = [
   {
     id: 'case-01',
     caseNumber: 'CASE #01',
-    title: 'The Vanishing Witness',
-    date: '14 NOV 2024',
-    category: 'MISSING PERSONS',
-    excerpt: 'A journalist vanished 72 hours before publishing a classified exposé on corporate money laundering...',
-    content: `FILE DATE: November 14, 2024
-CLASSIFICATION: ACTIVE / UNSOLVED
+    title: 'Deixis: Wait… This Meme Is Actually Pragmatics?',
+    date: 'September 8, 2026 ',
+    category: 'DEIXIS',
+    excerpt:  '',
+    content: `''
+I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just gini, gitu, ini, itulah without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
 
-SUMMARY:
-Investigative journalist MARCUS RAEL, 38, disappeared from his apartment on the evening of November 12th — exactly 72 hours before his scheduled press conference where he intended to release documentation linking three Fortune 500 companies to offshore money laundering totaling $2.4 billion.
+Deixis can simply be understood as “pointing through language.” We use certain expressions to point to people, places, things, time, or parts of a conversation. For example, “Can you pass me that one?” while pointing at a book is gestural deixis, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, symbolic deixis depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it.
 
-LAST KNOWN LOCATION:
-Grand Meridian Hotel, Room 417. Check-in confirmed at 21:34. Key card deactivated at 23:58. CCTV footage from corridor shows subject exiting room at 23:47. No footage recovered beyond elevator bay.
+Deictic expressions can also have a non-deictic or anaphoric use, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
 
-EVIDENCE RECOVERED:
-— Encrypted USB drive (contents: partially decrypted, see Case #07)
-— Burner phone with 3 deleted message threads (forensics in progress)
-— Hotel receipt for room service: 2 glasses, 1 bottle Bordeaux 2019
-— Partial fingerprints on balcony railing (cross-reference Case #04)
+There are also several types of deixis: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
 
-PERSONS OF INTEREST:
-1. ELENA VASQUEZ — corporate PR director, confirmed contact with subject 48h prior
-2. UNKNOWN MALE — seen in lobby at 23:30, paid cash, no ID
+And now the meme makes much more sense to me. 😂 Expressions like “gue,” “ini,” “gini,” and “gitu” depend heavily on context. If someone says:
 
-INVESTIGATOR'S NOTE:
-The timing is too precise to be coincidental. Someone knew the publication date. The question isn't where Rael went — it's who had access to his editorial calendar.`,
+“Gue nggak mau gitu.”
+
+my first question would probably be, “Gitu apaan?” 😭
+But if I am actually part of the conversation, I might immediately understand what “gitu” refers to. So, even though the meme looks like someone is saying a whole lot of nothing, it actually shows how we use context to understand what someone is pointing to through language. Maybe that is why this meme suddenly rings a bell when I think about deixis.
+
+ `,
     stampType: 'OPEN',
     xPct: 0.10,
     yPct: 0.10,
@@ -179,7 +175,7 @@ INVESTIGATOR'S NOTE:
 This is no longer a financial fraud case. We have evidence of coordinated action against a witness. Escalate to PRIORITY RED.`,
     stampType: 'CONFIDENTIAL',
     xPct: 0.08,
-    yPct: 0.50,
+    yPct: 0.37,
     baseRotation: -0.03,
     floatSpeed: 1.1,
     floatPhase: 3.5,
@@ -189,7 +185,7 @@ This is no longer a financial fraud case. We have evidence of coordinated action
   {
     id: 'case-06',
     caseNumber: 'CASE #06',
-    title: 'Multiple Persona Content Disorder',
+    title: 'Multiple Persona Disorder',
     date: '08 NOV 2024',
     category: 'SOCIAL ENGINEERING',
     excerpt: 'One operator. Nine distinct online personas. All coordinated to push a single narrative across platforms...',
@@ -218,7 +214,7 @@ Non-native English speaker, likely Eastern European linguistic background. Advan
 CROSS-REFERENCE: Case #02 (digital attack on @JELENA_OSTROVA), Case #03 (clone account automation)`,
     stampType: 'OPEN',
     xPct: 0.92,
-    yPct: 0.50,
+    yPct: 0.37,
     baseRotation: 0.04,
     floatSpeed: 0.85,
     floatPhase: 1.8,
@@ -303,7 +299,7 @@ STATUS: PRIORITY ESCALATION — Suspect likely still in Prague jurisdiction.`,
   {
     id: 'case-09',
     caseNumber: 'CASE #09',
-    title: 'Pastel Poison Mood Board',
+    title: 'Pastel Poison',
     date: '10 NOV 2024',
     category: 'CREATIVE FRAUD',
     excerpt: 'A curated aesthetic brand concealed a counterfeit goods operation — the mood board itself was evidence...',
@@ -383,6 +379,73 @@ Every thread leads here. One architect. One operation. The question remaining is
     baseRotation: 0.02,
     floatSpeed: 0.65,
     floatPhase: 3.9,
+    cardType: 'document',
+    accentHex: 0x8B0000,
+  },
+  {
+    id: 'case-11',
+    caseNumber: 'CASE #11',
+    title: 'The Prague Safehouse',
+    date: '05 DEC 2024',
+    category: 'SURVEILLANCE',
+    excerpt: 'A hidden apartment in Prague 1 was raided, revealing a server cluster and encrypted communications...',
+    content: `FILE DATE: December 5, 2024
+CLASSIFICATION: CONFIDENTIAL — RAID REPORT
+
+SUMMARY:
+A joint task force raided a residential apartment in Prague 1 (New Town) suspected of hosting the operations center of MERIDIAN DIGITAL HOLDINGS LLC (Case #10). The apartment was unoccupied but the server hardware was still warm.
+
+RECOVERED ITEMS:
+— 3 custom rack servers (active memory imaging successful)
+— Hardware security keys (YubiKeys)
+— Encrypted backup tapes
+— Shredded documents (reconstruction in progress)
+— Travel document under the name "Dmitri Varga" (matches "D.V." in Case #07)
+
+IP/DNS DATA:
+The server cluster was actively hosting 6 of the active clone profiles identified in Case #06, using high-speed fiber backhaul masked via residential proxies.
+
+INVESTIGATOR'S NOTE:
+Varga escaped less than an hour before the raid. He left his primary workstation behind, which suggests he is traveling light. Secure train stations and border crossings immediately.`,
+    stampType: 'OPEN',
+    xPct: 0.08,
+    yPct: 0.63,
+    baseRotation: 0.03,
+    floatSpeed: 1.05,
+    floatPhase: 1.9,
+    cardType: 'clipping',
+    accentHex: 0x2B52A0,
+  },
+  {
+    id: 'case-12',
+    caseNumber: 'CASE #12',
+    title: 'The Counterfeit Ledger',
+    date: '08 DEC 2024',
+    category: 'FORENSIC AUDIT',
+    excerpt: 'Decrypted logs from the Prague safehouse reveal transactions detailing payouts to local shell corporations...',
+    content: `FILE DATE: December 8, 2024
+CLASSIFICATION: CONFIDENTIAL — FORENSIC REPORT
+
+SUMMARY:
+Forensic audit of the server logs recovered from the Prague safehouse (Case #11) successfully decrypted the main database. We have uncovered the full financial ledger of MERIDIAN DIGITAL HOLDINGS LLC.
+
+KEY FINDINGS:
+— Direct payouts totaling $1.2M to Slovakian shell companies
+— Monthly retainer fees paid to "D.V." (Dmitri Varga) since June 2024
+— Two transactions flagged as "Special Operations" coinciding with Marcus Rael's disappearance
+— Crypto assets worth $4.1M traced to cold wallet addresses
+
+CROSS-REFERENCE:
+Matches wallet addresses from Case #08 and names from Case #07.
+
+INVESTIGATOR'S NOTE:
+This ledger completes the financial puzzle. We now have proof of payment for the corporate sabotage campaigns and the direct funding of the kidnapping. Varga is the operator, but the money trail leads to the highest levels of corporate leadership.`,
+    stampType: 'CONFIDENTIAL',
+    xPct: 0.92,
+    yPct: 0.63,
+    baseRotation: -0.04,
+    floatSpeed: 0.78,
+    floatPhase: 4.5,
     cardType: 'document',
     accentHex: 0x8B0000,
   },

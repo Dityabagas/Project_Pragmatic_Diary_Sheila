@@ -65,7 +65,7 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
             className="text-xs tracking-widest uppercase"
             style={{ color: '#CC1111', fontFamily: 'Oswald, sans-serif', fontWeight: 700 }}
           >
-            ⚠ CLASSIFIED — TASK FORCE ALPHA
+            ⚠ CLASSIFIED — CASE STUDY BOARD
           </span>
           <button
             id="modal-close-btn"
@@ -148,7 +148,7 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
           >
             <span>FILE: {selected.caseNumber.replace('CASE ', 'FILE-')}</span>
             <span>STATUS: <strong style={{ color: stampColour }}>{selected.stampType}</strong></span>
-            <span>INVESTIGATOR: TASK FORCE ALPHA</span>
+            <span>INVESTIGATOR: SHEILA LAYALIA</span>
             <span>DATE LOGGED: {selected.date}</span>
           </div>
 
