@@ -11,6 +11,12 @@ interface Props {
   onCaseSelect: (c: DiaryCase) => void;
 }
 
+// "PRAGMATICS DIARY" tile layout constants (must match drawThreads.ts)
+const LINE1_LEN = 10; // P R A G M A T I C S
+const LINE2_LEN = 5;  // D I A R Y
+const TILE = 46;
+const GAP = 6;
+
 const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const appRef = useRef<PIXI.Application | null>(null);
@@ -45,7 +51,7 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
     const bgLayer = new PIXI.Container();
     app.stage.addChild(bgLayer);
 
-    // Cork/felt texture: very subtle dot grid
+    // Cork/felt texture background
     const bgGfx = new PIXI.Graphics();
     bgGfx.beginFill(0x1c1c1a);
     bgGfx.drawRect(0, 0, W, H);
@@ -67,7 +73,7 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
     const vigSteps = 12;
     for (let i = 0; i < vigSteps; i++) {
       const t = i / vigSteps;
-      const alpha = t * t * 0.65;
+      const alpha = t * t * 0.7;
       const pad = t * Math.min(W, H) * 0.55;
       vignette.lineStyle(Math.min(W, H) * 0.055 / vigSteps, 0x000000, alpha);
       vignette.drawRect(pad, pad, W - pad * 2, H - pad * 2);
@@ -129,7 +135,7 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         }
       });
 
-      // Animate CODE letters
+      // Animate PRAGMATICS DIARY letter tiles
       codeLetters.forEach((c) => {
         const bx = (c as any).__baseX;
         const by = (c as any).__baseY;
@@ -162,15 +168,28 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         container.y = s.baseY;
       });
 
-      // Reposition CODE letters proportionally
-      const xPositions = [0.38, 0.46, 0.54, 0.62];
-      const yBase = 0.50;
+      // Reposition PRAGMATICS DIARY letter tiles
+      const totalLine1W = LINE1_LEN * TILE + (LINE1_LEN - 1) * GAP;
+      const totalLine2W = LINE2_LEN * TILE + (LINE2_LEN - 1) * GAP;
+      const centerX = nw / 2;
+      const centerY = nh / 2;
+
       codeLetters.forEach((c, i) => {
-        const pos = getScaledPos(xPositions[i], yBase, nw, nh);
-        (c as any).__baseX = pos.x;
-        (c as any).__baseY = pos.y;
-        c.x = pos.x;
-        c.y = pos.y;
+        let cx: number, cy: number;
+        if (i < LINE1_LEN) {
+          // Line 1: PRAGMATICS
+          cx = centerX - totalLine1W / 2 + i * (TILE + GAP) + TILE / 2;
+          cy = centerY - (TILE + GAP) / 2 - 4;
+        } else {
+          // Line 2: DIARY
+          const j = i - LINE1_LEN;
+          cx = centerX - totalLine2W / 2 + j * (TILE + GAP) + TILE / 2;
+          cy = centerY + (TILE + GAP) / 2 + 4;
+        }
+        (c as any).__baseX = cx;
+        (c as any).__baseY = cy;
+        c.x = cx;
+        c.y = cy;
       });
 
       // Reposition question mark proportionally

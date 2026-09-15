@@ -43,7 +43,7 @@ const HUDOverlay: React.FC = () => {
               marginBottom: '2px',
             }}
           >
-            ⚠ TASK FORCE ALPHA
+            ✎ SHEILA LAYALIA
           </div>
           <div
             style={{
@@ -53,7 +53,7 @@ const HUDOverlay: React.FC = () => {
               letterSpacing: '1px',
             }}
           >
-            Detective Crime Board
+            Pragmatics Diary
           </div>
           <div
             style={{
@@ -64,79 +64,12 @@ const HUDOverlay: React.FC = () => {
               marginTop: '2px',
             }}
           >
-            INTERACTIVE CASE DIARY — 2024
+            INTERACTIVE CASE STUDY BOARD — 2026
           </div>
         </div>
       </div>
 
-      {/* Top-right: Case counter */}
-      <div
-        className="fixed top-5 right-5 z-40 select-none"
-        style={{ pointerEvents: 'none' }}
-      >
-        <div
-          style={{
-            background: 'rgba(10,8,6,0.88)',
-            border: '1px solid rgba(204,17,17,0.35)',
-            backdropFilter: 'blur(8px)',
-            padding: '10px 16px',
-            textAlign: 'right',
-          }}
-        >
-          <div
-            style={{
-              fontFamily: 'Oswald, sans-serif',
-              fontWeight: 700,
-              fontSize: '28px',
-              color: '#F5E8CC',
-              lineHeight: 1,
-            }}
-          >
-            {total}
-          </div>
-          <div
-            style={{
-              fontFamily: '"Courier Prime", monospace',
-              fontSize: '9px',
-              color: '#7A6A5A',
-              letterSpacing: '2px',
-            }}
-          >
-            TOTAL CASES
-          </div>
-          <div style={{ marginTop: '6px', display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
-            {[
-              { label: 'SOLVED', count: solved, colour: '#145214' },
-              { label: 'OPEN', count: open, colour: '#CC8800' },
-              { label: 'CONF.', count: confidential, colour: '#8B0000' },
-              { label: 'EVID.', count: evidenceLogs, colour: '#1a3a6e' },
-            ].map((item) => (
-              <div key={item.label} style={{ textAlign: 'center' }}>
-                <div
-                  style={{
-                    fontFamily: 'Oswald, sans-serif',
-                    fontSize: '13px',
-                    fontWeight: 700,
-                    color: item.colour,
-                  }}
-                >
-                  {item.count}
-                </div>
-                <div
-                  style={{
-                    fontFamily: '"Courier Prime", monospace',
-                    fontSize: '7px',
-                    color: '#5A4A3A',
-                    letterSpacing: '1px',
-                  }}
-                >
-                  {item.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+
 
       {/* Bottom-left: Legend toggle */}
       <div className="fixed bottom-5 left-5 z-40">
@@ -234,7 +167,7 @@ const HUDOverlay: React.FC = () => {
             letterSpacing: '1px',
           }}
         >
-          HOVER · CLICK TO READ FULL CASE FILE
+          HOVER · CLICK TO READ FULL DIARY ENTRY
         </div>
       </div>
     </>

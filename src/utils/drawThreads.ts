@@ -58,71 +58,100 @@ export function drawThreads(
   }
 }
 
-// Decorative CODE letter tiles
+const LINE1 = ['P', 'R', 'A', 'G', 'M', 'A', 'T', 'I', 'C', 'S'];
+const LINE2 = ['D', 'I', 'A', 'R', 'Y'];
+
+// Tile size
+const TILE = 46;
+const GAP = 6;
+
+function buildTile(
+  letter: string,
+  stage: PIXI.Container,
+  cx: number,
+  cy: number,
+  idx: number,
+): PIXI.Container {
+  const c = new PIXI.Container();
+  c.x = cx;
+  c.y = cy;
+  c.rotation = (Math.random() - 0.5) * 0.09;
+
+  // Yellow sticky card body
+  const bg = new PIXI.Graphics();
+  bg.beginFill(0xFFD633, 1.0);
+  bg.drawRect(-TILE / 2, -TILE / 2, TILE, TILE);
+  bg.endFill();
+  // inner border highlight
+  bg.lineStyle(1.5, 0xCCA800, 0.5);
+  bg.drawRect(-TILE / 2 + 2, -TILE / 2 + 2, TILE - 4, TILE - 4);
+  c.addChild(bg);
+
+  // Pin shadow
+  const pinShadow = new PIXI.Graphics();
+  pinShadow.beginFill(0x000000, 0.2);
+  pinShadow.drawCircle(2, -TILE / 2 + 2, 6);
+  pinShadow.endFill();
+  c.addChild(pinShadow);
+
+  // Red pin
+  const pin = new PIXI.Graphics();
+  pin.beginFill(0xEE1111, 1.0);
+  pin.drawCircle(0, -TILE / 2 + 2, 6);
+  pin.endFill();
+  pin.beginFill(0xFFFFFF, 0.5);
+  pin.drawCircle(-2, -TILE / 2, 2.5);
+  pin.endFill();
+  c.addChild(pin);
+
+  // Letter text
+  const style = new PIXI.TextStyle({
+    fontFamily: 'Oswald, sans-serif',
+    fontSize: 28,
+    fontWeight: '700',
+    fill: 0xCC3300,
+    align: 'center',
+  });
+  const text = new PIXI.Text(letter, style);
+  text.anchor.set(0.5, 0.5);
+  text.y = 5;
+  c.addChild(text);
+
+  // Store base for float animation
+  (c as any).__baseX = cx;
+  (c as any).__baseY = cy;
+  (c as any).__floatPhase = idx * 0.85 + 10;
+  (c as any).__floatSpeed = 0.55 + idx * 0.06;
+
+  stage.addChild(c);
+  return c;
+}
+
 export function createCodeLetters(
   stage: PIXI.Container,
   canvasW: number,
   canvasH: number,
 ): PIXI.Container[] {
-  const letters = ['C', 'O', 'D', 'E'];
-  const xPositions = [0.38, 0.46, 0.54, 0.62];
-  const yBase = 0.50;
   const containers: PIXI.Container[] = [];
 
-  letters.forEach((letter, i) => {
-    const c = new PIXI.Container();
-    const pos = getScaledPos(xPositions[i], yBase, canvasW, canvasH);
-    c.x = pos.x;
-    c.y = pos.y;
-    c.rotation = (Math.random() - 0.5) * 0.08;
+  const totalLine1W = LINE1.length * TILE + (LINE1.length - 1) * GAP;
+  const totalLine2W = LINE2.length * TILE + (LINE2.length - 1) * GAP;
 
-    // Yellow sticky card
-    const bg = new PIXI.Graphics();
-    bg.beginFill(0xFFD633, 1.0);
-    bg.drawRect(-28, -28, 56, 56);
-    bg.endFill();
-    bg.lineStyle(1.5, 0xCCA800, 0.5);
-    bg.drawRect(-28, -28, 56, 56);
-    c.addChild(bg);
+  const centerX = canvasW / 2;
+  const centerY = canvasH / 2;
 
-    // Pin shadow
-    const pinShadow = new PIXI.Graphics();
-    pinShadow.beginFill(0x000000, 0.2);
-    pinShadow.drawCircle(2, 2, 6);
-    pinShadow.endFill();
-    c.addChild(pinShadow);
+  // Line 1 — "PRAGMATICS" centred
+  LINE1.forEach((letter, i) => {
+    const cx = centerX - totalLine1W / 2 + i * (TILE + GAP) + TILE / 2;
+    const cy = centerY - (TILE + GAP) / 2 - 4;
+    containers.push(buildTile(letter, stage, cx, cy, i));
+  });
 
-    // Pin
-    const pin = new PIXI.Graphics();
-    pin.beginFill(0xEE1111, 1.0);
-    pin.drawCircle(0, 0, 6);
-    pin.endFill();
-    pin.beginFill(0xFFFFFF, 0.5);
-    pin.drawCircle(-2, -2, 2.5);
-    pin.endFill();
-    c.addChild(pin);
-
-    // Letter
-    const style = new PIXI.TextStyle({
-      fontFamily: 'Oswald, sans-serif',
-      fontSize: 36,
-      fontWeight: '700',
-      fill: 0xCC3300,
-      align: 'center',
-    });
-    const text = new PIXI.Text(letter, style);
-    text.anchor.set(0.5, 0.5);
-    text.y = 12;
-    c.addChild(text);
-
-    // Store base for float animation
-    (c as any).__baseX = c.x;
-    (c as any).__baseY = c.y;
-    (c as any).__floatPhase = i * 0.9 + 10;
-    (c as any).__floatSpeed = 0.6 + i * 0.08;
-
-    stage.addChild(c);
-    containers.push(c);
+  // Line 2 — "DIARY" centred
+  LINE2.forEach((letter, i) => {
+    const cx = centerX - totalLine2W / 2 + i * (TILE + GAP) + TILE / 2;
+    const cy = centerY + (TILE + GAP) / 2 + 4;
+    containers.push(buildTile(letter, stage, cx, cy, LINE1.length + i));
   });
 
   return containers;
