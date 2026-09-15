@@ -4,31 +4,27 @@ export const diaryCases: DiaryCase[] = [
   {
     id: 'case-01',
     caseNumber: 'CASE #01',
-    title: 'The Vanishing Witness',
-    date: '14 NOV 2024',
-    category: 'MISSING PERSONS',
-    excerpt: 'A journalist vanished 72 hours before publishing a classified exposé on corporate money laundering...',
-    content: `FILE DATE: November 14, 2024
-CLASSIFICATION: ACTIVE / UNSOLVED
+    title: 'Deixis: Wait… This Meme Is Actually Pragmatics?',
+    date: '08 SEPT 2026',
+    category: 'Diary 1',
 
-SUMMARY:
-Investigative journalist MARCUS RAEL, 38, disappeared from his apartment on the evening of November 12th — exactly 72 hours before his scheduled press conference where he intended to release documentation linking three Fortune 500 companies to offshore money laundering totaling $2.4 billion.
+    imageUrl: '/Gambar/MEME PRAGMATICS.jpeg',
+    imageCaption: 'source: @ini.abibbb on ig',
+    content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just gini, gitu, ini, itulah without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
 
-LAST KNOWN LOCATION:
-Grand Meridian Hotel, Room 417. Check-in confirmed at 21:34. Key card deactivated at 23:58. CCTV footage from corridor shows subject exiting room at 23:47. No footage recovered beyond elevator bay.
+Deixis can simply be understood as “pointing through language.” We use certain expressions to point to people, places, things, time, or parts of a conversation. For example, “Can you pass me that one?” while pointing at a book is gestural deixis, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, symbolic deixis depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it.
 
-EVIDENCE RECOVERED:
-— Encrypted USB drive (contents: partially decrypted, see Case #07)
-— Burner phone with 3 deleted message threads (forensics in progress)
-— Hotel receipt for room service: 2 glasses, 1 bottle Bordeaux 2019
-— Partial fingerprints on balcony railing (cross-reference Case #04)
+Deictic expressions can also have a non-deictic or anaphoric use, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
 
-PERSONS OF INTEREST:
-1. ELENA VASQUEZ — corporate PR director, confirmed contact with subject 48h prior
-2. UNKNOWN MALE — seen in lobby at 23:30, paid cash, no ID
+There are also several types of deixis: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
 
-INVESTIGATOR'S NOTE:
-The timing is too precise to be coincidental. Someone knew the publication date. The question isn't where Rael went — it's who had access to his editorial calendar.`,
+And now the meme makes much more sense to me. 😂 Expressions like “gue,” “ini,” “gini,” and “gitu” depend heavily on context. If someone says:
+
+“Gue nggak mau gitu.”
+
+my first question would probably be, “Gitu apaan?” 😭
+
+But if I am actually part of the conversation, I might immediately understand what “gitu” refers to. So, even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.`,
     stampType: 'OPEN',
     xPct: 0.10,
     yPct: 0.10,
@@ -36,8 +32,10 @@ The timing is too precise to be coincidental. Someone knew the publication date.
     floatSpeed: 0.8,
     floatPhase: 0.0,
     cardType: 'photo',
+    cardImageUrl: '/Gambar/MEME SPIDER-MAN.jpeg',
     accentHex: 0xB22222,
   },
+
   {
     id: 'case-02',
     caseNumber: 'CASE #02',

@@ -172,22 +172,77 @@ export function createCardSprite(
   const imgGfx = new PIXI.Graphics();
 
   if (diaryCase.cardType === 'photo') {
-    // Polaroid photo slot: black/grey grayscale print frame
-    imgGfx.beginFill(0x222222, 0.95);
-    imgGfx.drawRect(8, iconY, CARD_W - 16, iconH);
-    imgGfx.endFill();
+    const cardImg = diaryCase.cardImageUrl || diaryCase.imageUrl;
 
-    // Photo details (Silhouette drawing)
-    imgGfx.lineStyle(1.5, 0x4a4a4a, 0.8);
-    const cx = CARD_W / 2;
-    imgGfx.drawCircle(cx, iconY + 30, 11);
-    imgGfx.moveTo(cx - 18, iconY + iconH - 5);
-    imgGfx.quadraticCurveTo(cx, iconY + 54, cx + 18, iconY + iconH - 5);
+    if (!cardImg) {
+      // No image: draw dark polaroid bg + silhouette
+      imgGfx.beginFill(0x222222, 0.95);
+      imgGfx.drawRect(8, iconY, CARD_W - 16, iconH);
+      imgGfx.endFill();
+      imgGfx.lineStyle(1.5, 0x4a4a4a, 0.8);
+      const cx = CARD_W / 2;
+      imgGfx.drawCircle(cx, iconY + 30, 11);
+      imgGfx.moveTo(cx - 18, iconY + iconH - 5);
+      imgGfx.quadraticCurveTo(cx, iconY + 54, cx + 18, iconY + iconH - 5);
+      imgGfx.lineStyle(1.5, 0xFFFFFF, 0.08);
+      imgGfx.moveTo(12, iconY + 8);
+      imgGfx.lineTo(CARD_W - 12, iconY + iconH - 8);
+    } else {
+      // Has custom image — draw light bg first, then load image on top
+      imgGfx.beginFill(0xE8E8E8, 1);
+      imgGfx.drawRect(8, iconY, CARD_W - 16, iconH);
+      imgGfx.endFill();
 
-    // Subtle gloss highlights on polaroid surface
-    imgGfx.lineStyle(1.5, 0xFFFFFF, 0.08);
-    imgGfx.moveTo(12, iconY + 8);
-    imgGfx.lineTo(CARD_W - 12, iconY + iconH - 8);
+      const targetW = CARD_W - 16;
+      const targetH = iconH;
+
+      // Use PIXI.Loader for reliable loading
+      const loaderKey = `card-img-${diaryCase.id}`;
+
+      const applySprite = (texture: PIXI.Texture) => {
+        const photoSprite = new PIXI.Sprite(texture);
+        photoSprite.x = 8;
+        photoSprite.y = iconY;
+
+        // Scale to cover the slot maintaining aspect ratio
+        const imgW = texture.width;
+        const imgH = texture.height;
+        const scaleX = targetW / imgW;
+        const scaleY = targetH / imgH;
+        const scale = Math.max(scaleX, scaleY);
+        photoSprite.width = imgW * scale;
+        photoSprite.height = imgH * scale;
+
+        // Center within slot
+        photoSprite.x = 8 + (targetW - photoSprite.width) / 2;
+        photoSprite.y = iconY + (targetH - photoSprite.height) / 2;
+
+        const maskGfx = new PIXI.Graphics();
+        maskGfx.beginFill(0xffffff);
+        maskGfx.drawRect(8, iconY, targetW, targetH);
+        maskGfx.endFill();
+        photoSprite.mask = maskGfx;
+
+        container.addChild(maskGfx);
+        container.addChild(photoSprite);
+      };
+
+      try {
+        if (PIXI.utils.TextureCache[cardImg]) {
+          // Already cached
+          applySprite(PIXI.utils.TextureCache[cardImg]);
+        } else {
+          // Load via PIXI.Assets (pixi.js v7)
+          PIXI.Assets.load(cardImg).then((texture: PIXI.Texture) => {
+            applySprite(texture);
+          }).catch((err: unknown) => {
+            console.error('Failed to load card image:', err);
+          });
+        }
+      } catch (err) {
+        console.error('Failed to load card photo sprite:', err);
+      }
+    }
   } else if (diaryCase.cardType === 'clipping') {
     // Ruled columns representing newspaper article body
     imgGfx.lineStyle(1, 0x5a554a, 0.45);
@@ -261,28 +316,29 @@ export function createCardSprite(
     titleText.y = textYStart;
     container.addChild(titleText);
 
-    // Divider line
-    const divider = new PIXI.Graphics();
-    divider.lineStyle(1, 0xBBAA7A, 0.45);
-    const divY = textYStart + titleText.height + 4;
-    divider.moveTo(7, divY);
-    divider.lineTo(CARD_W - 7, divY);
-    container.addChild(divider);
+    // Excerpt text & divider (only if excerpt is provided)
+    if (diaryCase.excerpt) {
+      const divider = new PIXI.Graphics();
+      divider.lineStyle(1, 0xBBAA7A, 0.45);
+      const divY = textYStart + titleText.height + 4;
+      divider.moveTo(7, divY);
+      divider.lineTo(CARD_W - 7, divY);
+      container.addChild(divider);
 
-    // Excerpt text
-    const excerptStyle = new PIXI.TextStyle({
-      fontFamily: 'Courier Prime, monospace',
-      fontSize: 8,
-      fill: 0x3A3028,
-      wordWrap: true,
-      wordWrapWidth: CARD_W - 12,
-      leading: 0.5,
-    });
-    const wrapped = wrapText(diaryCase.excerpt, 26);
-    const excerptText = new PIXI.Text(wrapped, excerptStyle);
-    excerptText.x = 7;
-    excerptText.y = divY + 4;
-    container.addChild(excerptText);
+      const excerptStyle = new PIXI.TextStyle({
+        fontFamily: 'Courier Prime, monospace',
+        fontSize: 8,
+        fill: 0x3A3028,
+        wordWrap: true,
+        wordWrapWidth: CARD_W - 12,
+        leading: 0.5,
+      });
+      const wrapped = wrapText(diaryCase.excerpt || '', 26);
+      const excerptText = new PIXI.Text(wrapped, excerptStyle);
+      excerptText.x = 7;
+      excerptText.y = divY + 4;
+      container.addChild(excerptText);
+    }
   }
 
   // ── Stamp overlay (Slightly smaller stamp) ───────────────────────────────────

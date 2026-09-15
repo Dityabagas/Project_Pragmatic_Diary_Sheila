@@ -119,27 +119,74 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
           </div>
 
           {/* Divider */}
-          <div className="flex items-center gap-3 mb-5">
-            <div className="flex-1 h-px" style={{ background: '#BBA87A' }} />
-            <div className="w-2 h-2 rounded-full" style={{ background: '#CC1111' }} />
-            <div className="flex-1 h-px" style={{ background: '#BBA87A' }} />
-          </div>
+          {(selected.excerpt || selected.content || selected.imageUrl) && (
+            <div className="flex items-center gap-3 mb-5">
+              <div className="flex-1 h-px" style={{ background: '#BBA87A' }} />
+              <div className="w-2 h-2 rounded-full" style={{ background: '#CC1111' }} />
+              <div className="flex-1 h-px" style={{ background: '#BBA87A' }} />
+            </div>
+          )}
 
           {/* Case excerpt callout */}
-          <blockquote
-            className="border-l-4 pl-4 mb-6 italic text-sm leading-relaxed"
-            style={{ borderColor: '#CC1111', color: '#3a2a1a' }}
-          >
-            {selected.excerpt}
-          </blockquote>
+          {selected.excerpt && (
+            <blockquote
+              className="border-l-4 pl-4 mb-6 italic text-sm leading-relaxed"
+              style={{ borderColor: '#CC1111', color: '#3a2a1a' }}
+            >
+              {selected.excerpt}
+            </blockquote>
+          )}
+
+          {/* Photo before content ("I remember...") */}
+          {selected.imageUrl && (
+            <div className="mb-4 flex flex-col items-center">
+              <div
+                className="relative p-1.5 bg-[#FAF6EE] border border-[#C8B896] rounded-sm shadow-md"
+                style={{
+                  boxShadow: '0 6px 18px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.12)',
+                }}
+              >
+                {/* Vintage evidence tape */}
+                <div
+                  className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-14 h-3.5 bg-[#EAE2CE]/90 border border-[#D0C4A8]/70 rotate-[-1deg]"
+                  style={{ backdropFilter: 'blur(1px)' }}
+                />
+                <img
+                  src={selected.imageUrl}
+                  alt={selected.title}
+                  className="max-h-[175px] max-w-[200px] w-auto object-contain rounded-sm"
+                />
+              </div>
+              {/* Caption / Source underneath photo */}
+              {selected.imageCaption && (
+                <div
+                  className="mt-1.5 text-xs text-[#5A4A3A] italic tracking-wide text-center"
+                  style={{ fontFamily: '"Courier Prime", monospace' }}
+                >
+                  {selected.imageCaption}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Full content */}
-          <div
-            className="text-sm leading-relaxed whitespace-pre-line"
-            style={{ color: '#2a1e10', lineHeight: '1.75' }}
-          >
-            {selected.content}
-          </div>
+          {selected.content && (
+            <div
+              className="text-sm leading-relaxed whitespace-pre-line"
+              style={{ color: '#2a1e10', lineHeight: '1.75' }}
+            >
+              {selected.content.split(/(\*\*[^*]+\*\*)/g).map((part, idx) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                  return (
+                    <strong key={idx} style={{ fontWeight: 800, color: '#000000' }}>
+                      {part.slice(2, -2)}
+                    </strong>
+                  );
+                }
+                return part;
+              })}
+            </div>
+          )}
 
           {/* Footer metadata */}
           <div
@@ -148,7 +195,6 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
           >
             <span>FILE: {selected.caseNumber.replace('CASE ', 'FILE-')}</span>
             <span>STATUS: <strong style={{ color: stampColour }}>{selected.stampType}</strong></span>
-            <span>INVESTIGATOR: TASK FORCE ALPHA</span>
             <span>DATE LOGGED: {selected.date}</span>
           </div>
 
