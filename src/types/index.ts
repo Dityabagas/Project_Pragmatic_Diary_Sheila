@@ -1,4 +1,4 @@
-export type StampType = 'EVIDENCE LOG' | 'CONFIDENTIAL' | 'SOLVED' | 'OPEN';
+export type StampType = 'EVIDENCE LOG' | 'CONFIDENTIAL' | 'SOLVED' | 'OPEN' | 'CLOSED';
 export type CardType = 'photo' | 'document' | 'note' | 'clipping';
 
 export interface DiaryCase {
@@ -39,4 +39,5 @@ export interface AnimState {
   pinPulse: number;
   isHovered: boolean;
   caseData: DiaryCase;
+  responsiveScale: number;
 }

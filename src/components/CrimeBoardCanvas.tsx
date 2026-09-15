@@ -112,12 +112,13 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         const s = (container as any).__animState;
         if (!s) return;
 
-        // Smooth scale lerp
+        // Smooth scale lerp multiplied by responsive scale
         s.currentScale += (s.targetScale - s.currentScale) * 0.12;
-        container.scale.set(s.currentScale);
+        const finalScale = s.currentScale * (s.responsiveScale || 1.0);
+        container.scale.set(finalScale);
 
         // Floating oscillation
-        const yOff = Math.sin(elapsed * s.floatSpeed + s.floatPhase) * 5;
+        const yOff = Math.sin(elapsed * s.floatSpeed + s.floatPhase) * 4 * (s.responsiveScale || 1.0);
         const rotOff = Math.sin(elapsed * s.floatSpeed * 0.7 + s.floatPhase) * 0.012;
         container.x = s.baseX + Math.cos(elapsed * s.floatSpeed * 0.5 + s.floatPhase + 1) * 1.5;
         container.y = s.baseY + yOff;
@@ -157,10 +158,14 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
       const nh = containerRef.current.clientHeight;
       appRef.current.renderer.resize(nw, nh);
 
-      // Reposition cards proportionally inside the safe box
+      // Compute global scale ratio for responsive canvas scaling
+      const responsiveScale = Math.min(1.0, Math.max(0.38, Math.min(nw / 1050, nh / 700)));
+
+      // Reposition and scale cards proportionally inside the safe box
       cardMap.forEach((container) => {
         const s = (container as any).__animState;
         if (!s) return;
+        s.responsiveScale = responsiveScale;
         const pos = getScaledPos(s.caseData.xPct, s.caseData.yPct, nw, nh);
         s.baseX = pos.x;
         s.baseY = pos.y;
@@ -168,23 +173,26 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         container.y = s.baseY;
       });
 
-      // Reposition PRAGMATICS DIARY letter tiles
-      const totalLine1W = LINE1_LEN * TILE + (LINE1_LEN - 1) * GAP;
-      const totalLine2W = LINE2_LEN * TILE + (LINE2_LEN - 1) * GAP;
+      // Reposition & scale PRAGMATICS DIARY letter tiles
+      const TILE_S = TILE * responsiveScale;
+      const GAP_S = GAP * responsiveScale;
+      const totalLine1W = LINE1_LEN * TILE_S + (LINE1_LEN - 1) * GAP_S;
+      const totalLine2W = LINE2_LEN * TILE_S + (LINE2_LEN - 1) * GAP_S;
       const centerX = nw / 2;
       const centerY = nh / 2;
 
       codeLetters.forEach((c, i) => {
+        c.scale.set(responsiveScale);
         let cx: number, cy: number;
         if (i < LINE1_LEN) {
           // Line 1: PRAGMATICS
-          cx = centerX - totalLine1W / 2 + i * (TILE + GAP) + TILE / 2;
-          cy = centerY - (TILE + GAP) / 2 - 4;
+          cx = centerX - totalLine1W / 2 + i * (TILE_S + GAP_S) + TILE_S / 2;
+          cy = centerY - (TILE_S + GAP_S) / 2 - 4 * responsiveScale;
         } else {
           // Line 2: DIARY
           const j = i - LINE1_LEN;
-          cx = centerX - totalLine2W / 2 + j * (TILE + GAP) + TILE / 2;
-          cy = centerY + (TILE + GAP) / 2 + 4;
+          cx = centerX - totalLine2W / 2 + j * (TILE_S + GAP_S) + TILE_S / 2;
+          cy = centerY + (TILE_S + GAP_S) / 2 + 4 * responsiveScale;
         }
         (c as any).__baseX = cx;
         (c as any).__baseY = cy;
@@ -192,13 +200,17 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         c.y = cy;
       });
 
-      // Reposition question mark proportionally
+      // Reposition & scale question mark proportionally
+      qMark.scale.set(responsiveScale);
       const qPos = getScaledPos(0.21, 0.52, nw, nh);
       (qMark as any).__baseX = qPos.x;
       (qMark as any).__baseY = qPos.y;
       qMark.x = qPos.x;
       qMark.y = qPos.y;
     };
+
+    // Trigger initial resize to apply responsive scale immediately
+    handleResize();
 
     window.addEventListener('resize', handleResize);
 

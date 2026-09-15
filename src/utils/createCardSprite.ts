@@ -9,6 +9,7 @@ const STAMP_COLOURS: Record<string, number> = {
   'CONFIDENTIAL': 0x8B0000,
   'SOLVED': 0x145214,
   'OPEN': 0x7a4a00,
+  'CLOSED': 0x4A4A4A,
 };
 
 function wrapText(text: string, maxChars: number): string {
@@ -427,6 +428,7 @@ export function createCardSprite(
     pinPulse: 0,
     isHovered: false,
     caseData: diaryCase,
+    responsiveScale: 1.0,
   };
   (container as any).__animState = animState;
   (container as any).__pin = pinContainer; // targets the entire pin container for pulse animation

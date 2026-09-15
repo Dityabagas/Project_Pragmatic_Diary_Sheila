@@ -39,349 +39,265 @@ But if I am actually part of the conversation, I might immediately understand wh
   {
     id: 'case-02',
     caseNumber: 'CASE #02',
-    title: 'Content Sins',
-    date: '29 OCT 2024',
-    category: 'DIGITAL FRAUD',
-    excerpt: `A creator's engagement metrics were surgically manipulated the moment they covered a rival brand...`,
-    content: `FILE DATE: October 29, 2024
-CLASSIFICATION: EVIDENCE LOG / ACTIVE
+    title: 'Diary #02 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 2',
+    excerpt: 'Case file sealed. This pragmatics investigation log is currently locked and will be published soon by Sheila Layalia...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Content creator @JELENA_OSTROVA (2.3M followers) discovered that her engagement rate dropped by 74% within 6 hours of posting a comparative review video mentioning competitor brand NOVA LABS. The suppression was algorithmic but externally triggered.
+STATUS: CASE FILE SEALED 🔒
 
-PLATFORM ANALYSIS:
-— Organic reach suppressed across 3 platforms simultaneously
-— Shadow-ban flags applied via API abuse (third-party scheduler exploited)
-— Bot network of ~18,000 accounts unfollowed within 4-hour window
-— Competitor brand NOVA LABS gained +31,000 followers in same window
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #02 are being compiled and will be published in a future update.
 
-TECHNICAL EVIDENCE:
-API call logs show abnormal POST requests to /v2/audience/modify from IP block 185.220.xx.xx — a known Tor exit node cluster. Request signatures match those flagged in Case #06.
-
-FINANCIAL MOTIVE:
-Subject had signed exclusivity deal worth $340,000 with brand directly competing with NOVA LABS. Deal was announced 3 days before the attack.
-
-INVESTIGATOR'S NOTE:
-This is not organic. The coordination across platforms within a 6-hour window requires either insider platform access or a highly sophisticated API exploit. We are looking at organized digital sabotage — not a rogue fan.`,
-    stampType: 'EVIDENCE LOG',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.35,
     yPct: 0.08,
     baseRotation: 0.03,
     floatSpeed: 1.0,
     floatPhase: 1.2,
     cardType: 'clipping',
-    accentHex: 0x2B52A0,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-03',
     caseNumber: 'CASE #03',
-    title: 'The Shadow Profile',
-    date: '05 NOV 2024',
-    category: 'IDENTITY THEFT',
-    excerpt: '17 near-identical clone accounts appeared overnight, systematically redirecting followers from the original creator...',
-    content: `FILE DATE: November 5, 2024
-CLASSIFICATION: CONFIDENTIAL
+    title: 'Diary #03 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 3',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #03...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Digital artist ARIA CHEN woke on the morning of November 5th to find 17 near-identical social media profiles mimicking her brand, username format, avatar, and bio — each created within a 90-minute window between 02:00 and 03:30 AM.
+STATUS: CASE FILE SEALED 🔒
 
-CLONE PROFILE CHARACTERISTICS:
-— Username pattern: aria_chen[suffix] (e.g. aria_chen.art, aria_chen.official)
-— Stolen artwork reposted without credit, purchase links redirected to counterfeit storefronts
-— Each profile followed 200–800 of subject's followers within hours of creation
-— Engagement bots deployed to elevate clone profiles in recommendation algorithms
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #03 are being compiled and will be published in a future update.
 
-ORIGIN TRACE:
-Creation timestamps cluster around 02:17–03:24 AM UTC. Device fingerprints suggest single operator using automated account creation tool. Email domains used: disposable addresses from guerrillamail.com and temp-mail.org.
-
-One clone account slipped: a profile picture was uploaded before compression, retaining original EXIF metadata pointing to device IMEI 3591xxxxxx (partial).
-
-FINANCIAL DAMAGE:
-Subject estimates $67,000 in lost artwork commissions redirected to counterfeit storefronts. Three international buyers defrauded.
-
-CROSS-REFERENCE: Case #06 (same operator signature), Case #08 (payment trail)`,
-    stampType: 'CONFIDENTIAL',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.65,
     yPct: 0.08,
     baseRotation: 0.05,
     floatSpeed: 0.9,
     floatPhase: 2.3,
     cardType: 'photo',
-    accentHex: 0x1a5c2e,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-04',
     caseNumber: 'CASE #04',
-    title: 'Fingerprint Evidence',
-    date: '18 NOV 2024',
-    category: 'FORENSIC LAB',
-    excerpt: 'Partial prints recovered from a wiped drive match no registered database — but the pattern repeats across three crime scenes...',
-    content: `FILE DATE: November 18, 2024
-CLASSIFICATION: FORENSIC EVIDENCE LOG
+    title: 'Diary #04 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 4',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #04...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Forensic analysis of a commercially wiped Western Digital 4TB hard drive (recovered from a dumpster outside 14 Meridian Place) revealed recoverable partial fingerprints on the casing and one surviving data fragment — a 47KB encrypted archive.
+STATUS: CASE FILE SEALED 🔒
 
-FINGERPRINT ANALYSIS:
-— Right thumb, 8-point match quality
-— Left index finger, partial — 5-point match
-— AFIS database: NO MATCH (subject not registered in any national database)
-— The same 8-point right thumb pattern appears in Case #01 (hotel balcony) and Case #07 (keyboard forensics)
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #04 are being compiled and will be published in a future update.
 
-DATA FRAGMENT:
-The 47KB archive, once decrypted (key recovered from Case #05), contained a partial financial ledger. Entries reference shell company "MERIDIAN DIGITAL HOLDINGS LLC" (see Case #08).
-
-NOTABLE DETAIL:
-The wiping software used was ERASER v6.2 with Gutmann 35-pass protocol — used almost exclusively by professionals with forensic awareness. This is not an amateur.
-
-LAB TECHNICIAN NOTE (Dr. Sarah Kovacs):
-"The print quality suggests the subject wore gloves for most of the interaction but removed them briefly — likely to handle a delicate component. Confidence rating: HIGH that prints belong to same individual across all three scenes."`,
-    stampType: 'EVIDENCE LOG',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.90,
     yPct: 0.10,
     baseRotation: -0.06,
     floatSpeed: 0.7,
     floatPhase: 0.7,
     cardType: 'document',
-    accentHex: 0x2a2a2a,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-05',
     caseNumber: 'CASE #05',
-    title: 'The Codebreaker',
-    date: '21 NOV 2024',
-    category: 'CRYPTOGRAPHY',
-    excerpt: 'Intercepted encrypted messages between two unknown users reveal coordinates and a countdown — decoded via a 19th-century cipher...',
-    content: `FILE DATE: November 21, 2024
-CLASSIFICATION: ACTIVE — CRYPTOGRAPHIC ANALYSIS
+    title: 'Diary #05 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 5',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #05...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Intelligence unit intercepted 34 encrypted messages exchanged between users [REDACTED_ALPHA] and [REDACTED_BETA] on an invite-only dark forum. The cipher was identified as a modified Vigenère with a keyphrase derived from a 1922 public domain poetry anthology.
+STATUS: CASE FILE SEALED 🔒
 
-CIPHER DETAILS:
-— Base: Vigenère cipher
-— Key: "SILENTECHOES" (from Eliot's "The Waste Land," 1922 edition)
-— Modification: ROT-3 post-encryption layer
-— First 12 messages decoded; remaining 22 require additional key fragments
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #05 are being compiled and will be published in a future update.
 
-DECODED CONTENT (EXCERPTS):
-MESSAGE 07: "Shipment confirmed. Coordinates 41.8827°N 87.6233°W. Arrive before the 28th."
-MESSAGE 12: "The journalist has been neutralised. Phase 2 proceeds. Rael will not testify."
-MESSAGE 19: "The ledger copies are split. One copy: drive. One copy: [CORRUPTED]."
-MESSAGE 23: "Use the ghost profiles for the distraction campaign. Same as Case #3."
-
-KEY FINDING:
-Message 12 directly references MARCUS RAEL (Case #01). The timestamp is November 13, 01:22 AM — 3 hours before RAEL's disappearance was officially registered.
-
-INVESTIGATOR'S NOTE:
-This is no longer a financial fraud case. We have evidence of coordinated action against a witness. Escalate to PRIORITY RED.`,
-    stampType: 'CONFIDENTIAL',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.08,
     yPct: 0.50,
     baseRotation: -0.03,
     floatSpeed: 1.1,
     floatPhase: 3.5,
     cardType: 'note',
-    accentHex: 0xCC8800,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-06',
     caseNumber: 'CASE #06',
-    title: 'Multiple Persona Content Disorder',
-    date: '08 NOV 2024',
-    category: 'SOCIAL ENGINEERING',
-    excerpt: 'One operator. Nine distinct online personas. All coordinated to push a single narrative across platforms...',
-    content: `FILE DATE: November 8, 2024
-CLASSIFICATION: OPEN INVESTIGATION
+    title: 'Diary #06 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 6',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #06...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Social media analysis unit identified a network of 9 distinct online personas — each with unique personality, writing style, profile picture, and follower base — all operated by a single individual using coordinated automation tools.
+STATUS: CASE FILE SEALED 🔒
 
-PERSONA BREAKDOWN:
-1. @techinsider_ryan — 45K followers, tech commentary, pro-NOVA LABS
-2. @artscene_london — 12K followers, "discovers" counterfeit art storefronts
-3. @marketpulse_anon — 89K followers, financial analysis, promotes MERIDIAN DIGITAL HOLDINGS
-4. @fashionista_mimi — 23K followers, lifestyle, amplifies disinformation campaigns
-5–9. [Under active analysis — see supplementary report]
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #06 are being compiled and will be published in a future update.
 
-LINKING METHODOLOGY:
-— Writing tic analysis: all personas use double-em-dash (——) identically
-— Device fingerprint: all login events from same hardware via VPN rotation
-— Posting pattern: staggered by 7–23 minutes (automation timing signature)
-— Grammar error cluster: three specific misspellings appear in 7/9 accounts
-
-OPERATOR PROFILE (PRELIMINARY):
-Non-native English speaker, likely Eastern European linguistic background. Advanced technical literacy. Has operated personas for minimum 14 months. Estimated daily time investment: 4–6 hours.
-
-CROSS-REFERENCE: Case #02 (digital attack on @JELENA_OSTROVA), Case #03 (clone account automation)`,
-    stampType: 'OPEN',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.92,
     yPct: 0.50,
     baseRotation: 0.04,
     floatSpeed: 0.85,
     floatPhase: 1.8,
     cardType: 'clipping',
-    accentHex: 0x6B2FA0,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-07',
     caseNumber: 'CASE #07',
-    title: 'Confidential Leak',
-    date: '25 NOV 2024',
-    category: 'CLASSIFIED BREACH',
-    excerpt: 'Internal project documents leaked anonymously — metadata in the files exposes device, location, and a 3-hour window...',
-    content: `FILE DATE: November 25, 2024
-CLASSIFICATION: CONFIDENTIAL — INTERNAL BREACH
+    title: 'Diary #07 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 7',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #07...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-On November 22nd, 847 pages of internal project documentation from NOVA LABS were posted anonymously to a document-sharing platform. The leak included product roadmaps, internal audit results, and correspondence implicating executive leadership in the suppression campaign (see Cases #02, #06).
+STATUS: CASE FILE SEALED 🔒
 
-METADATA ANALYSIS:
-File creation timestamps span 14 October – 9 November 2024.
-Last modified: November 21, 2024 at 18:43:22 (UTC+2 — Eastern European time zone).
-Author field (not scrubbed): "D.V." — initials match one individual in our POI database.
-Device ID embedded in Office metadata: Surface Pro 9, serial partial 037XXXXX.
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #07 are being compiled and will be published in a future update.
 
-LOCATION DATA:
-GPS coordinates embedded in document thumbnail (oversight): 50.0755°N 14.4378°E — PRAGUE, CZECH REPUBLIC.
-
-CONTENT HIGHLIGHTS:
-— Email chain showing NOVA LABS CEO authorized "competitive suppression protocol"
-— Budget allocation: $2.1M for "digital reputation management" (read: sabotage)
-— Reference to "the Rael problem" — 3 weeks before his disappearance
-
-DIGITAL FORENSICS LINK:
-The USB drive recovered in Case #01 (Marcus Rael's belongings) contains a partial copy of 41 of these documents. Rael had a source inside NOVA LABS.`,
-    stampType: 'CONFIDENTIAL',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.10,
     yPct: 0.90,
     baseRotation: -0.05,
     floatSpeed: 0.95,
     floatPhase: 4.1,
     cardType: 'document',
-    accentHex: 0xB22222,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-08',
     caseNumber: 'CASE #08',
-    title: 'Digital Footprint',
-    date: '02 DEC 2024',
-    category: 'DIGITAL FORENSICS',
-    excerpt: 'A single IP address traces back through seven VPN hops to a café in Prague — the same city as the document leak...',
-    content: `FILE DATE: December 2, 2024
-CLASSIFICATION: EVIDENCE LOG
+    title: 'Diary #08 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 8',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #08...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Deep packet inspection of the dark forum traffic (Case #05) traced all anonymous connections through a 7-hop VPN chain. Standard unmasking techniques failed. However, a single VPN node misconfiguration logged the originating IP for 11 minutes before correction.
+STATUS: CASE FILE SEALED 🔒
 
-IP TRACE RESULTS:
-Original IP: 78.128.xx.xx → Prague, Czech Republic, ISP: O2 Czech Republic
-Physical location: KAVARNA NOVA, Wenceslas Square area, Prague 1
-Date/Time: November 21, 2024, 11:47–11:58 AM local time
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #08 are being compiled and will be published in a future update.
 
-CCTV CROSS-REFERENCE:
-Czech authorities provided CCTV access. During the 11-minute window, 3 individuals were using laptops at the café. Partial face capture of one individual — submitted to INTERPOL facial recognition (results pending).
-
-PAYMENT TRAIL:
-Counterfeit storefront payments (Case #03) routed through: PayPal → Wise → Binance → cold wallet address bc1q7h... → OTC exchange in Prague. OTC exchange has KYC records (subpoena in progress).
-
-DEVICE CONSISTENCY:
-Cell tower ping during café visit matches a device IMEI partially recovered from Case #03 EXIF data. High-confidence match: 89%.
-
-STATUS: PRIORITY ESCALATION — Suspect likely still in Prague jurisdiction.`,
-    stampType: 'EVIDENCE LOG',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.35,
     yPct: 0.92,
     baseRotation: 0.06,
     floatSpeed: 1.2,
     floatPhase: 5.0,
     cardType: 'photo',
-    accentHex: 0x1a4a6e,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-09',
     caseNumber: 'CASE #09',
-    title: 'Pastel Poison Mood Board',
-    date: '10 NOV 2024',
-    category: 'CREATIVE FRAUD',
-    excerpt: 'A curated aesthetic brand concealed a counterfeit goods operation — the mood board itself was evidence...',
-    content: `FILE DATE: November 10, 2024
-CLASSIFICATION: EVIDENCE LOG / SOLVED (PARTIAL)
+    title: 'Diary #09 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 9',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #09...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Subject "ANDREA BERGE MOONRISE" — an online aesthetic/lifestyle brand with 178K followers — was using a public mood board account as a covert product catalog for counterfeit goods. The visually curated posts contained steganographically embedded purchase links.
+STATUS: CASE FILE SEALED 🔒
 
-STEGANOGRAPHIC TECHNIQUE:
-Each image posted by the account contained a hidden URL in the image's least-significant-bits (LSB). When extracted, these URLs led to a Telegram channel where counterfeit luxury items (handbags, watches, cosmetics) were sold for 15–30% of retail value.
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #09 are being compiled and will be published in a future update.
 
-SCALE OF OPERATION:
-— 847 images with embedded links over 14 months
-— Estimated transactions: 3,200+ sales
-— Revenue estimate: $180,000–$240,000 USD
-— Counterfeit goods sourced from manufacturer in Guangzhou (supplier identified)
-
-EVIDENCE ALREADY SECURED:
-✓ Archive of all 847 images with extracted steganographic data
-✓ Telegram channel access log (via platform cooperation)
-✓ Supplier invoice trail
-✓ Two buyer testimonies
-
-OUTSTANDING:
-— Bank account holding proceeds not yet frozen (legal process initiated)
-— Identity of "Andrea Berge" not confirmed (strong lead: female, 24–30, Scandinavian)
-
-CROSS-REFERENCE: Case #06 (persona construction), Case #10 (shell company)`,
-    stampType: 'SOLVED',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.65,
     yPct: 0.92,
     baseRotation: -0.03,
     floatSpeed: 0.75,
     floatPhase: 2.7,
     cardType: 'clipping',
-    accentHex: 0x8B4513,
+    accentHex: 0x4A4A4A,
   },
   {
     id: 'case-10',
     caseNumber: 'CASE #10',
-    title: 'The Final Thread',
-    date: '28 NOV 2024',
-    category: 'CONVERGENCE',
-    excerpt: 'All threads lead to a single shell company incorporated 6 months ago using a falsified identity — the web collapses to one node...',
-    content: `FILE DATE: November 28, 2024
-CLASSIFICATION: PRIORITY RED — CONVERGENCE POINT
+    title: 'Diary #10 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 10',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #10...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-SUMMARY:
-Analysis of all nine preceding cases has identified a single convergence point: shell company MERIDIAN DIGITAL HOLDINGS LLC, incorporated in Delaware on May 3, 2024 — 6 months before the first incident in this investigation.
+STATUS: CASE FILE SEALED 🔒
 
-CORPORATE STRUCTURE:
-— Registered agent: LEXINGTON CORP SERVICES (nominee)
-— Listed director: "THOMAS A. BRENNAN" (identity confirmed falsified — deceased since 2019)
-— Bank account: Signature Bank Delaware → transferred to Silvergate → now in multiple crypto wallets
-— Total assets moved through entity: est. $3.8M over 6 months
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #10 are being compiled and will be published in a future update.
 
-OPERATIONAL CONTROL:
-Evidence from Cases #05, #07, #08 collectively point to a single individual, likely operating from Prague, Czech Republic, with Eastern European linguistic background, advanced technical skills, and intimate knowledge of both financial systems and social media infrastructure.
-
-THE TIMELINE:
-May 2024 → Shell company formed
-June 2024 → Persona network activated (Case #06)
-Aug–Oct 2024 → Content sabotage campaigns (Cases #02, #03)
-Nov 12 → Marcus Rael disappears (Case #01) — THE CRITICAL DATE
-Nov 21 → Document leak (Case #07)
-Nov 22 → Forum messages decoded (Case #05)
-Nov 28 → THIS FILE COMPILED
-
-INVESTIGATOR'S FINAL NOTE:
-Every thread leads here. One architect. One operation. The question remaining is not *what* but *why* — and whether Rael is still alive to answer it.
-
-⚠ DO NOT DISTRIBUTE OUTSIDE TASK FORCE ALPHA.`,
-    stampType: 'OPEN',
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
     xPct: 0.90,
     yPct: 0.90,
     baseRotation: 0.02,
     floatSpeed: 0.65,
     floatPhase: 3.9,
     cardType: 'document',
-    accentHex: 0x8B0000,
+    accentHex: 0x4A4A4A,
+  },
+  {
+    id: 'case-11',
+    caseNumber: 'CASE #11',
+    title: 'Diary #11 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 11',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #11...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
+
+STATUS: CASE FILE SEALED 🔒
+
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #11 are being compiled and will be published in a future update.
+
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
+    xPct: 0.22,
+    yPct: 0.30,
+    baseRotation: -0.04,
+    floatSpeed: 0.8,
+    floatPhase: 1.5,
+    cardType: 'note',
+    accentHex: 0x4A4A4A,
+  },
+  {
+    id: 'case-12',
+    caseNumber: 'CASE #12',
+    title: 'Diary #12 — [SEALED DOSSIER]',
+    date: 'UPCOMING',
+    category: 'Diary 12',
+    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #12...',
+    content: `FILE DATE: UPCOMING
+CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
+
+STATUS: CASE FILE SEALED 🔒
+
+This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #12 are being compiled and will be published in a future update.
+
+Stay tuned for Sheila Layalia's next pragmatics investigation!`,
+    stampType: 'CLOSED',
+    xPct: 0.78,
+    yPct: 0.30,
+    baseRotation: 0.05,
+    floatSpeed: 0.9,
+    floatPhase: 2.1,
+    cardType: 'document',
+    accentHex: 0x4A4A4A,
   },
 ];

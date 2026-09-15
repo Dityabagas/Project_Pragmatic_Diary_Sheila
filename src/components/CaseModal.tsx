@@ -11,6 +11,7 @@ const STAMP_COLOURS: Record<string, string> = {
   'CONFIDENTIAL': '#8B0000',
   'SOLVED': '#145214',
   'OPEN': '#7a4a00',
+  'CLOSED': '#4A4A4A',
 };
 
 const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
@@ -77,7 +78,7 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
           </button>
         </div>
 
-        <div className="px-8 pt-6 pb-8">
+        <div className="px-4 sm:px-8 pt-5 sm:pt-6 pb-6 sm:pb-8">
           {/* Header */}
           <div className="flex items-start justify-between mb-4">
             <div>
@@ -207,13 +208,12 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
 
           {/* Bottom classification */}
           <div
-            className="mt-4 text-center text-xs tracking-widest uppercase py-2"
+            className="mt-4 text-center text-[10px] sm:text-xs tracking-widest uppercase py-2 -mx-4 sm:-mx-8 -mb-6 sm:-mb-8"
             style={{
               background: '#1a1a1a',
               color: '#CC1111',
               fontFamily: 'Oswald, sans-serif',
               fontWeight: 700,
-              margin: '0 -32px -32px',
               borderTop: '2px solid #CC1111',
             }}
           >
