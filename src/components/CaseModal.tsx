@@ -65,7 +65,7 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
             className="text-xs tracking-widest uppercase"
             style={{ color: '#CC1111', fontFamily: 'Oswald, sans-serif', fontWeight: 700 }}
           >
-            ⚠ CLASSIFIED — TASK FORCE ALPHA
+            📁 PRAGMATICS CASE FILE — RESEARCH LOG
           </span>
           <button
             id="modal-close-btn"
@@ -175,12 +175,19 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
               className="text-sm leading-relaxed whitespace-pre-line"
               style={{ color: '#2a1e10', lineHeight: '1.75' }}
             >
-              {selected.content.split(/(\*\*[^*]+\*\*)/g).map((part, idx) => {
+              {selected.content.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, idx) => {
                 if (part.startsWith('**') && part.endsWith('**')) {
                   return (
                     <strong key={idx} style={{ fontWeight: 800, color: '#000000' }}>
                       {part.slice(2, -2)}
                     </strong>
+                  );
+                }
+                if (part.startsWith('*') && part.endsWith('*')) {
+                  return (
+                    <em key={idx} style={{ fontStyle: 'italic', fontWeight: 'normal' }}>
+                      {part.slice(1, -1)}
+                    </em>
                   );
                 }
                 return part;
@@ -210,7 +217,7 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
               borderTop: '2px solid #CC1111',
             }}
           >
-            END OF FILE — DO NOT REPRODUCE — INTERNAL USE ONLY
+            END OF CASE STUDY — LINGUISTIC ANALYSIS
           </div>
         </div>
       </div>

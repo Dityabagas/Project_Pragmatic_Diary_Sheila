@@ -10,21 +10,21 @@ export const diaryCases: DiaryCase[] = [
 
     imageUrl: '/Gambar/MEME PRAGMATICS.jpeg',
     imageCaption: 'source: @ini.abibbb on ig',
-    content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just gini, gitu, ini, itulah without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
+    content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just *gini*, *gitu*, *ini*, *itulah* without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
 
-Deixis can simply be understood as “pointing through language.” We use certain expressions to point to people, places, things, time, or parts of a conversation. For example, “Can you pass me that one?” while pointing at a book is gestural deixis, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, symbolic deixis depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it.
+Deixis can simply be understood as **“pointing through language.”** We use certain expressions to point to people, places, things, time, or parts of a conversation. For example, “Can you pass me that one?” while pointing at a book is **gestural deixis**, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, **symbolic deixis** depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it.
 
-Deictic expressions can also have a non-deictic or anaphoric use, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
+Deictic expressions can also have a non-deictic or **anaphoric use**, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
 
-There are also several types of deixis: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
+There are also several **types of deixis**: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
 
-And now the meme makes much more sense to me. 😂 Expressions like “gue,” “ini,” “gini,” and “gitu” depend heavily on context. If someone says:
+And now the meme makes much more sense to me. Expressions like *“gue,”* *“ini,”* *“gini,”* and *“gitu”* depend heavily on context. If someone says:
 
-“Gue nggak mau gitu.”
+*“Gue nggak mau gitu.”*
 
-my first question would probably be, “Gitu apaan?” 😭
+my first question would probably be, *“Gitu apaan?”* 😭
 
-But if I am actually part of the conversation, I might immediately understand what “gitu” refers to. So, even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.`,
+But if I am actually part of the conversation, I might immediately understand what *“gitu”* refers to. So, even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.`,
     stampType: 'OPEN',
     xPct: 0.10,
     yPct: 0.10,
