@@ -1,16 +1,9 @@
 import * as PIXI from 'pixi.js';
 import { DiaryCase, AnimState } from '../types';
 import { getScaledPos, CARD_W, CARD_H } from './coords';
+import { STAMP_COLOUR_HEX } from '../constants/theme';
+import { getAnimState, setAnimState, setPinContainer } from './pixiUtils';
 const PIN_R = 7;
-
-// Stamp colours
-const STAMP_COLOURS: Record<string, number> = {
-  'EVIDENCE LOG': 0x1a3a6e,
-  'CONFIDENTIAL': 0x8B0000,
-  'SOLVED': 0x145214,
-  'OPEN': 0x7a4a00,
-  'CLOSED': 0x4A4A4A,
-};
 
 function wrapText(text: string, maxChars: number): string {
   const words = text.split(' ');
@@ -348,7 +341,7 @@ export function createCardSprite(
   stampContainer.y = CARD_H - 26;
 
   const stampBg = new PIXI.Graphics();
-  const stampColour = STAMP_COLOURS[diaryCase.stampType] ?? 0x8B0000;
+  const stampColour = STAMP_COLOUR_HEX[diaryCase.stampType] ?? 0x8B0000;
   stampBg.lineStyle(2, stampColour, 0.7);
   stampBg.drawRoundedRect(-36, -10, 72, 20, 3);
   stampContainer.addChild(stampBg);
@@ -400,21 +393,54 @@ export function createCardSprite(
 
   container.addChild(pinContainer);
 
-  // ── Interactivity ─────────────────────────────────────────────────────────────
+  // ── Interactivity & Touch Hit Area ─────────────────────────────────────────────
   container.interactive = true;
+  (container as Record<string, unknown>).eventMode = 'static';
   container.cursor = 'pointer';
 
   container.on('pointerover', () => {
-    const s = (container as any).__animState as AnimState;
+    const s = getAnimState(container);
     if (s) { s.targetScale = 1.07; s.isHovered = true; }
   });
   container.on('pointerout', () => {
-    const s = (container as any).__animState as AnimState;
+    const s = getAnimState(container);
     if (s) { s.targetScale = 1.0; s.isHovered = false; }
   });
-  container.on('pointerdown', () => {
+
+  let startX = 0;
+  let startY = 0;
+  let isPressed = false;
+  let lastTriggerTime = 0;
+
+  const doSelect = () => {
+    const now = Date.now();
+    if (now - lastTriggerTime < 350) return;
+    lastTriggerTime = now;
     onSelect(diaryCase);
+  };
+
+  container.on('pointerdown', (e: PIXI.FederatedPointerEvent) => {
+    startX = e.globalX;
+    startY = e.globalY;
+    isPressed = true;
   });
+
+  container.on('pointerup', (e: PIXI.FederatedPointerEvent) => {
+    if (!isPressed) return;
+    isPressed = false;
+    const dx = Math.abs(e.globalX - startX);
+    const dy = Math.abs(e.globalY - startY);
+    if (dx < 12 && dy < 12) {
+      doSelect();
+    }
+  });
+
+  container.on('pointerupoutside', () => {
+    isPressed = false;
+  });
+
+  container.on('pointertap', doSelect);
+  container.on('click', doSelect);
 
   // ── Attach animation state ────────────────────────────────────────────────────
   const animState: AnimState = {

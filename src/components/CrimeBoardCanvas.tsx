@@ -6,6 +6,7 @@ import { threads } from '../data/threads.data';
 import { createCardSprite } from '../utils/createCardSprite';
 import { drawThreads, createCodeLetters, createQuestionMark } from '../utils/drawThreads';
 import { getScaledPos } from '../utils/coords';
+import { getAnimState, getPinContainer } from '../utils/pixiUtils';
 
 interface Props {
   onCaseSelect: (c: DiaryCase) => void;
@@ -109,7 +110,7 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
 
       // Animate case cards
       cardMap.forEach((container) => {
-        const s = (container as any).__animState;
+        const s = getAnimState(container);
         if (!s) return;
 
         // Smooth scale lerp multiplied by responsive scale
@@ -125,7 +126,7 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         container.rotation = s.baseRotation + rotOff;
 
         // Hover: pin pulse glow
-        const pin = (container as any).__pin as PIXI.Graphics | undefined;
+        const pin = getPinContainer(container);
         if (pin && s.isHovered) {
           const pulse = (Math.sin(elapsed * 6) + 1) / 2; // 0–1
           pin.alpha = 0.7 + pulse * 0.3;
@@ -163,7 +164,7 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
 
       // Reposition and scale cards proportionally inside the safe box
       cardMap.forEach((container) => {
-        const s = (container as any).__animState;
+        const s = getAnimState(container);
         if (!s) return;
         s.responsiveScale = responsiveScale;
         const pos = getScaledPos(s.caseData.xPct, s.caseData.yPct, nw, nh);

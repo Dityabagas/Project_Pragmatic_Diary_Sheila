@@ -1,18 +1,11 @@
 import React from 'react';
 import { DiaryCase } from '../types';
 import { diaryCases } from '../data/diaryCases.data';
+import { STAMP_COLOURS } from '../constants/theme';
 
 interface Props {
   onCaseSelect: (c: DiaryCase) => void;
 }
-
-const STAMP_COLOURS: Record<string, string> = {
-  'EVIDENCE LOG': '#1a3a6e',
-  'CONFIDENTIAL': '#8B0000',
-  'SOLVED': '#145214',
-  'OPEN': '#7a4a00',
-  'CLOSED': '#555555',
-};
 
 const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
   return (

@@ -1,18 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { DiaryCase } from '../types';
+import { STAMP_COLOURS } from '../constants/theme';
 
 interface Props {
   selected: DiaryCase | null;
   onClose: () => void;
 }
-
-const STAMP_COLOURS: Record<string, string> = {
-  'EVIDENCE LOG': '#1a3a6e',
-  'CONFIDENTIAL': '#8B0000',
-  'SOLVED': '#145214',
-  'OPEN': '#7a4a00',
-  'CLOSED': '#4A4A4A',
-};
 
 const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
