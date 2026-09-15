@@ -154,11 +154,9 @@ const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange }) => {
               }}
             >
               {[
-                { colour: '#CC1111', label: 'Red thread — evidence link' },
-                { colour: '#8B0000', label: 'CONFIDENTIAL case' },
-                { colour: '#1a3a6e', label: 'Evidence log' },
-                { colour: '#145214', label: 'Solved case' },
-                { colour: '#CC8800', label: 'Open / active case' },
+                { colour: '#CC1111', label: 'Red thread — case connection' },
+                { colour: '#7a4a00', label: 'OPEN — active diary entry' },
+                { colour: '#4A4A4A', label: 'CLOSED — locked / upcoming' },
               ].map((item) => (
                 <div
                   key={item.label}
