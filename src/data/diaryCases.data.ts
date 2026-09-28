@@ -39,26 +39,34 @@ But if I am actually part of the conversation, I might immediately understand wh
   {
     id: 'case-02',
     caseNumber: 'CASE #02',
-    title: 'Diary #02 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
+    title: 'I Rewatched Pride and Prejudice and Found Presupposition',
+    date: '22 SEPT 2026',
     category: 'Diary 2',
-    excerpt: 'Case file sealed. This pragmatics investigation log is currently locked and will be published soon by Sheila Layalia...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
 
-STATUS: CASE FILE SEALED 🔒
+    imageUrl: '/Gambar/content diary 2.jpeg',
+    imageCaption: 'Pride and Prejudice (2005)',
+    content: `When I rewatched Pride and Prejudice, I noticed a scene I had probably overlooked before. During the ball, Mr. Darcy says about Elizabeth, **“She's barely tolerable. I dare to say but not handsome enough to tempt me.”** What caught my attention was that Elizabeth actually heard him. From her expression, we can see how surprised and offended she was, and after that moment, her perception of Darcy started to change.
 
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #02 are being compiled and will be published in a future update.
+Then I thought, wait, is this pragmatics?
 
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
+It actually connects to **presupposition**, which is basically an assumption that exists in the background of what someone says. For example, when someone says, “Sarah stopped smoking,” the sentence assumes that Sarah used to smoke, even though that information is not directly stated. While learning about presupposition, I also came across **entailment**, which is closely related but focuses on what must be true based on the meaning of the sentence itself. So, presupposition is more about what is assumed in the background, while entailment is about what is logically contained in the meaning.
+                                                                                                                
+And apparently, presupposition has different types too: **existential, lexical, factive, non-factive, structural, and counterfactual**. They depend on the words or structures that trigger the assumption, which makes me realize that we make these kinds of assumptions in language more often than we probably notice.
+
+Going back to Darcy, his words express an evaluation of Elizabeth’s appearance. He treats her attractiveness as relevant to his decision about whether she is worth dancing with and presents her as not attractive enough according to his standard. But Elizabeth does not stop at the literal meaning. From his words and the situation surrounding them, she begins to see Darcy as proud and judgmental. So, besides presupposition, another pragmatic element we can see in this scene is **pragmatic inference**, where Elizabeth draws a conclusion about Darcy’s attitude based on what he says and the context.
+
+What I find interesting is that communication is rarely just about what is explicitly said. We also understand what is assumed in the background and what the context leads us to infer. One sentence from Darcy changed how Elizabeth saw him, showing how a few words can carry much more meaning than what is actually spoken.
+
+And honestly, that is what makes pragmatics so interesting. You can watch a scene you have seen before, notice one little line, and suddenly realize there is a whole layer of meaning hiding behind it.`,
+    stampType: 'OPEN',
     xPct: 0.35,
     yPct: 0.08,
     baseRotation: 0.03,
     floatSpeed: 1.0,
     floatPhase: 1.2,
-    cardType: 'clipping',
-    accentHex: 0x4A4A4A,
+    cardType: 'photo',
+    cardImageUrl: '/Gambar/cover diary 2.jpeg',
+    accentHex: 0xB22222,
   },
   {
     id: 'case-03',
