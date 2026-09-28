@@ -395,7 +395,7 @@ export function createCardSprite(
 
   // ── Interactivity & Touch Hit Area ─────────────────────────────────────────────
   container.interactive = true;
-  (container as Record<string, unknown>).eventMode = 'static';
+  (container as unknown as Record<string, unknown>).eventMode = 'static';
   container.cursor = 'pointer';
 
   container.on('pointerover', () => {
