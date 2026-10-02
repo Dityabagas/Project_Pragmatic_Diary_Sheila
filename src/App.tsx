@@ -10,16 +10,12 @@ const App: React.FC = () => {
   const [viewMode, setViewMode] = useState<'board' | 'list'>('board');
 
   // Screen mode rules:
-  // Mobile (<768px): Force Dossier List view
-  // Tablet/iPad (768px-1024px): Allow toggle between Board & Dossier List
-  // Desktop (>1024px): Force Board view
+  // Mobile (<768px): Force Case List view
+  // Tablet/iPad & Desktop (>=768px): Allow free toggle between Board & Case List
   useEffect(() => {
     const handleResize = () => {
-      const w = window.innerWidth;
-      if (w < 768) {
+      if (window.innerWidth < 768) {
         setViewMode('list');
-      } else if (w > 1024) {
-        setViewMode('board');
       }
     };
     handleResize();

@@ -93,8 +93,8 @@ const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange }) => {
         </div>
       </div>
 
-      {/* Top-right: View Switcher Toggle (iPad / Tablet only) */}
-      <div className="hidden md:flex lg:hidden fixed top-5 right-5 z-40 items-center gap-1 p-1 bg-[#0A0806]/90 border border-[#CC1111]/60 backdrop-blur-md rounded-xs shadow-lg">
+      {/* Top-right: View Switcher Toggle (iPad, Tablet & Desktop) */}
+      <div className="hidden md:flex fixed top-4 right-4 sm:top-5 sm:right-5 z-40 items-center gap-1 p-1 bg-[#0A0806]/90 border border-[#CC1111]/60 backdrop-blur-md rounded-xs shadow-lg">
         <button
           onClick={() => onViewModeChange('board')}
           className={`px-2.5 py-1.5 text-xs font-bold tracking-wider uppercase transition-all rounded-xs ${
