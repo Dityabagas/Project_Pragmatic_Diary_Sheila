@@ -71,3 +71,149 @@ body::after {
   user-select: none;
   -webkit-user-select: none;
 }
+
+/* ── Opening Sequence Keyframes (Cinematic Stagger) ────────────────────────── */
+@keyframes memoCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pinBounceDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-35px) scale(1.8);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(3px) scale(0.92);
+  }
+  85% {
+    transform: translateY(-1px) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes itemFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonPulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 10px rgba(204, 17, 17, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.6), 0 0 22px rgba(204, 17, 17, 0.7);
+  }
+}
+
+.anim-memo-card {
+  animation: memoCardEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-pin-drop {
+  opacity: 0;
+  animation: pinBounceDrop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.35s forwards;
+}
+
+.anim-badge-fade {
+  opacity: 0;
+  animation: itemFadeUp 0.6s ease-out 0.65s forwards;
+}
+
+.anim-headline-fade {
+  opacity: 0;
+  animation: itemFadeUp 0.7s ease-out 1.05s forwards;
+}
+
+.anim-para-1 {
+  opacity: 0;
+  animation: itemFadeUp 0.75s ease-out 1.55s forwards;
+}
+
+.anim-para-2 {
+  opacity: 0;
+  animation: itemFadeUp 0.75s ease-out 2.05s forwards;
+}
+
+.anim-sign-off {
+  opacity: 0;
+  animation: itemFadeUp 0.65s ease-out 2.55s forwards;
+}
+
+.anim-button-fade {
+  opacity: 0;
+  animation: itemFadeUp 0.7s ease-out 3.6s forwards, buttonPulseGlow 3s ease-in-out 4.4s infinite;
+}
+
+.anim-tip-fade {
+  opacity: 0;
+  animation: itemFadeUp 0.6s ease-out 4.0s forwards;
+}
+
+/* ── Declassified / Unredacted Document Effects ────────────────────────────── */
+@keyframes wipeRedaction {
+  0% {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes stampSlam {
+  0% {
+    opacity: 0;
+    transform: scale(2.8) rotate(-26deg);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(0.92) rotate(-8deg);
+  }
+  85% {
+    transform: scale(1.05) rotate(-11deg);
+  }
+  100% {
+    opacity: 0.92;
+    transform: scale(1) rotate(-10deg);
+  }
+}
+
+.anim-redact-bar-1 {
+  animation: wipeRedaction 0.65s cubic-bezier(0.65, 0, 0.35, 1) 1.6s forwards;
+}
+
+.anim-redact-bar-2 {
+  animation: wipeRedaction 0.65s cubic-bezier(0.65, 0, 0.35, 1) 2.25s forwards;
+}
+
+.anim-redact-bar-3 {
+  animation: wipeRedaction 0.65s cubic-bezier(0.65, 0, 0.35, 1) 2.85s forwards;
+}
+
+.anim-declassified-stamp {
+  opacity: 0;
+  animation: stampSlam 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.3s forwards;
+}
