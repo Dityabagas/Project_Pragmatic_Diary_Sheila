@@ -70,26 +70,43 @@ And honestly, that is what makes pragmatics so interesting. You can watch a scen
   {
     id: 'case-03',
     caseNumber: 'CASE #03',
-    title: 'Diary #03 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
+    title: 'Say Less, Mean More: A Diary on Implicature',
+    date: '06 OCT 2026',
     category: 'Diary 3',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #03...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
+    imageUrl: '/Gambar/content diary 3.jpeg',
+    imageCaption: 'source: personal documentation',
+    content: `Have you ever received a message that says only *"Fine."* and then spent twenty minutes wondering if the person is angry? 😅 Today I had a mini version of that with my brother.
 
-STATUS: CASE FILE SEALED 🔒
+I texted him, "Sore mau ke Aeon gak?" and he answered, "bebas." Then I asked, "Jam brp tapi ya?" and he answered "bebas" again. He never said yes and never gave me a time, yet I understood him well enough to reply "iyah nanti sore." How did that work? Today I learned the answer: **implicature**.
 
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #03 are being compiled and will be published in a future update.
+According to Xiang et al. (2024), people often mean more than what they literally say, and the term *implicature* was created to describe this kind of meaning. The idea comes from the philosopher H. P. Grice. He proposed that speakers follow a **Cooperative Principle**, which means making your contribution fit what the conversation needs at that moment. This explains why I never thought my brother was being unhelpful. When an answer sounds strange, we don't think "that makes no sense." We think "there must be a hidden meaning." Grice described four **maxims** that support this principle:
 
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
+- Quantity (give enough information, not too much),
+- Quality (say what is true),
+- Relation (be relevant),
+- Manner (be clear and orderly).
+
+The most fun part is **flouting**. According to Xiang et al. (2024), a speaker can *openly* break a maxim, and the listener then searches for the implied meaning. One example in the book is a friend who loses his iPad, and Tom says, "You are such a meticulous person!" It is clearly false, so it's irony. My chat today was a Quantity flout, because the question asked for a time but "bebas" gave no information. I didn't give up on his answer, though. I worked out that he probably meant "any time is fine" or "you decide."
+
+I also learned what *type* of implicature "bebas" is. It is **conversational**, not conventional, because conventional implicatures come from specific words like *but* or *therefore* and cannot be cancelled. It is also **particularized**, because its meaning depends on the situation. The same word could mean "I don't mind," "you decide," or "I'm too lazy to choose," depending on context. The implicature is *defeasible*, meaning it can be cancelled ("bebas, asal sebelum jam 4" would change everything). It is also *calculable*, meaning the listener works out the meaning using the words, the context, background knowledge, and what both people share.
+
+The same thing happens in the phrase **"boys will be boys,"** which keeps showing up on social media. Literally, it says nothing, because of course a boy is a boy. Listeners still assume the speaker is cooperating, so they work out a hidden meaning like "that's just how boys are, don't be surprised." This is exactly why the phrase is controversial. People can use it to excuse bad behavior, and if someone objects, the speaker can say, "I only said boys are boys!" Implied meaning is easier to deny than something said directly.
+
+Some other things blew my mind. Xiang et al. (2024) mention that Keenan (1976) argued that in Malagasy communities, speakers often hold back information, so Quantity may not be universal. They also explain that later scholars simplified Grice's four maxims: Levinson into three principles, Horn into two, and Sperber and Wilson into just one, Relevance.
+
+My takeaway is that meaning isn't only in the words. It is also in the context, the relationship, and the tone. Next time someone writes "Fine." "Terserah." or "bebas," I'll think before I decide what it means.
+
+**Reference**
+Xiang, M., et al. (2024). *Introduction to Pragmatics* (Peking University Linguistics Research 9). Peking University Press / Springer. https://doi.org/10.1007/978-981-99-6464-2`,
+    stampType: 'OPEN',
     xPct: 0.95,
     yPct: 0.0,
     baseRotation: -0.03,
     floatSpeed: 0.9,
     floatPhase: 2.3,
     cardType: 'photo',
-    accentHex: 0x4A4A4A,
+    cardImageUrl: '/Gambar/cover diary 3.jpeg',
+    accentHex: 0xB22222,
   },
 
   {
