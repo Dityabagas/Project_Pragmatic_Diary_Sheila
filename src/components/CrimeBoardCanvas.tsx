@@ -92,15 +92,24 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
     const cardLayer = new PIXI.Container();
     app.stage.addChild(cardLayer);
 
+    const calcResponsiveScale = (width: number, height: number) => {
+      // Height budget: 2 rows of cards (2 * 224) + center letters (85) + margins (110) = 643px
+      const scaleH = (height - 110) / 580;
+      // Width budget: 3 columns (3 * 168) + center letters = 880px
+      const scaleW = (width - 80) / 880;
+      return Math.min(1.15, Math.max(0.48, Math.min(scaleW, scaleH)));
+    };
+
+    const initialResponsiveScale = calcResponsiveScale(W, H);
+
     diaryCases.forEach((dc) => {
-      const card = createCardSprite(dc, W, H, handleSelect);
+      const card = createCardSprite(dc, W, H, handleSelect, initialResponsiveScale);
       cardMap.set(dc.id, card);
       cardLayer.addChild(card);
     });
 
     // ── Decorative elements ────────────────────────────────────────────────────
     const codeLetters = createCodeLetters(app.stage, W, H);
-    const qMark = createQuestionMark(app.stage, W, H);
 
     // ── Ticker loop ────────────────────────────────────────────────────────────
     let elapsed = 0;
@@ -119,7 +128,7 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         container.scale.set(finalScale);
 
         // Floating oscillation
-        const yOff = Math.sin(elapsed * s.floatSpeed + s.floatPhase) * 4 * (s.responsiveScale || 1.0);
+        const yOff = Math.sin(elapsed * s.floatSpeed + s.floatPhase) * 3 * (s.responsiveScale || 1.0);
         const rotOff = Math.sin(elapsed * s.floatSpeed * 0.7 + s.floatPhase) * 0.012;
         container.x = s.baseX + Math.cos(elapsed * s.floatSpeed * 0.5 + s.floatPhase + 1) * 1.5;
         container.y = s.baseY + yOff;
@@ -159,15 +168,15 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
       const nh = containerRef.current.clientHeight;
       appRef.current.renderer.resize(nw, nh);
 
-      // Compute global scale ratio for responsive canvas scaling
-      const responsiveScale = Math.min(1.0, Math.max(0.38, Math.min(nw / 1050, nh / 700)));
+      // Compute responsive scale factor guaranteeing zero overlaps across all laptops & monitors
+      const responsiveScale = calcResponsiveScale(nw, nh);
 
       // Reposition and scale cards proportionally inside the safe box
       cardMap.forEach((container) => {
         const s = getAnimState(container);
         if (!s) return;
         s.responsiveScale = responsiveScale;
-        const pos = getScaledPos(s.caseData.xPct, s.caseData.yPct, nw, nh);
+        const pos = getScaledPos(s.caseData.xPct, s.caseData.yPct, nw, nh, responsiveScale);
         s.baseX = pos.x;
         s.baseY = pos.y;
         container.x = s.baseX;
@@ -200,14 +209,6 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
         c.x = cx;
         c.y = cy;
       });
-
-      // Reposition & scale question mark proportionally
-      qMark.scale.set(responsiveScale);
-      const qPos = getScaledPos(0.21, 0.52, nw, nh);
-      (qMark as any).__baseX = qPos.x;
-      (qMark as any).__baseY = qPos.y;
-      qMark.x = qPos.x;
-      qMark.y = qPos.y;
     };
 
     // Trigger initial resize to apply responsive scale immediately
