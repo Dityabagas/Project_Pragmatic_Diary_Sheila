@@ -7,7 +7,6 @@ export const diaryCases: DiaryCase[] = [
     title: 'Deixis: Wait… This Meme Is Actually Pragmatics?',
     date: '08 SEPT 2026',
     category: 'Diary 1',
-
     imageUrl: '/Gambar/MEME PRAGMATICS.jpeg',
     imageCaption: 'source: @ini.abibbb on ig',
     content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just *gini*, *gitu*, *ini*, *itulah* without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
@@ -26,8 +25,8 @@ my first question would probably be, *“Gitu apaan?”* 😭
 
 But if I am actually part of the conversation, I might immediately understand what *“gitu”* refers to. So, even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.`,
     stampType: 'OPEN',
-    xPct: 0.10,
-    yPct: 0.10,
+    xPct: 0.14,
+    yPct: 0.16,
     baseRotation: -0.04,
     floatSpeed: 0.8,
     floatPhase: 0.0,
@@ -42,7 +41,6 @@ But if I am actually part of the conversation, I might immediately understand wh
     title: 'I Rewatched Pride and Prejudice and Found Presupposition',
     date: '22 SEPT 2026',
     category: 'Diary 2',
-
     imageUrl: '/Gambar/content diary 2.jpeg',
     imageCaption: 'Pride and Prejudice (2005)',
     content: `When I rewatched Pride and Prejudice, I noticed a scene I had probably overlooked before. During the ball, Mr. Darcy says about Elizabeth, **“She's barely tolerable. I dare to say but not handsome enough to tempt me.”** What caught my attention was that Elizabeth actually heard him. From her expression, we can see how surprised and offended she was, and after that moment, her perception of Darcy started to change.
@@ -59,8 +57,8 @@ What I find interesting is that communication is rarely just about what is expli
 
 And honestly, that is what makes pragmatics so interesting. You can watch a scene you have seen before, notice one little line, and suddenly realize there is a whole layer of meaning hiding behind it.`,
     stampType: 'OPEN',
-    xPct: 0.35,
-    yPct: 0.08,
+    xPct: 0.50,
+    yPct: 0.14,
     baseRotation: 0.03,
     floatSpeed: 1.0,
     floatPhase: 1.2,
@@ -68,6 +66,7 @@ And honestly, that is what makes pragmatics so interesting. You can watch a scen
     cardImageUrl: '/Gambar/cover diary 2.jpeg',
     accentHex: 0xB22222,
   },
+
   {
     id: 'case-03',
     caseNumber: 'CASE #03',
@@ -84,14 +83,15 @@ This pragmatics diary entry is currently locked. The field notes and linguistic 
 
 Stay tuned for Sheila Layalia's next pragmatics investigation!`,
     stampType: 'CLOSED',
-    xPct: 0.65,
-    yPct: 0.08,
-    baseRotation: 0.05,
+    xPct: 0.86,
+    yPct: 0.16,
+    baseRotation: -0.03,
     floatSpeed: 0.9,
     floatPhase: 2.3,
     cardType: 'photo',
     accentHex: 0x4A4A4A,
   },
+
   {
     id: 'case-04',
     caseNumber: 'CASE #04',
@@ -108,14 +108,15 @@ This pragmatics diary entry is currently locked. The field notes and linguistic 
 
 Stay tuned for Sheila Layalia's next pragmatics investigation!`,
     stampType: 'CLOSED',
-    xPct: 0.90,
-    yPct: 0.10,
-    baseRotation: -0.06,
+    xPct: 0.14,
+    yPct: 0.82,
+    baseRotation: 0.04,
     floatSpeed: 0.7,
     floatPhase: 0.7,
     cardType: 'document',
     accentHex: 0x4A4A4A,
   },
+
   {
     id: 'case-05',
     caseNumber: 'CASE #05',
@@ -132,14 +133,15 @@ This pragmatics diary entry is currently locked. The field notes and linguistic 
 
 Stay tuned for Sheila Layalia's next pragmatics investigation!`,
     stampType: 'CLOSED',
-    xPct: 0.08,
-    yPct: 0.50,
-    baseRotation: -0.03,
+    xPct: 0.50,
+    yPct: 0.84,
+    baseRotation: -0.02,
     floatSpeed: 1.1,
     floatPhase: 3.5,
     cardType: 'note',
     accentHex: 0x4A4A4A,
   },
+
   {
     id: 'case-06',
     caseNumber: 'CASE #06',
@@ -156,156 +158,12 @@ This pragmatics diary entry is currently locked. The field notes and linguistic 
 
 Stay tuned for Sheila Layalia's next pragmatics investigation!`,
     stampType: 'CLOSED',
-    xPct: 0.92,
-    yPct: 0.50,
-    baseRotation: 0.04,
+    xPct: 0.86,
+    yPct: 0.82,
+    baseRotation: 0.03,
     floatSpeed: 0.85,
     floatPhase: 1.8,
     cardType: 'clipping',
-    accentHex: 0x4A4A4A,
-  },
-  {
-    id: 'case-07',
-    caseNumber: 'CASE #07',
-    title: 'Diary #07 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
-    category: 'Diary 7',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #07...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
-
-STATUS: CASE FILE SEALED 🔒
-
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #07 are being compiled and will be published in a future update.
-
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
-    xPct: 0.10,
-    yPct: 0.90,
-    baseRotation: -0.05,
-    floatSpeed: 0.95,
-    floatPhase: 4.1,
-    cardType: 'document',
-    accentHex: 0x4A4A4A,
-  },
-  {
-    id: 'case-08',
-    caseNumber: 'CASE #08',
-    title: 'Diary #08 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
-    category: 'Diary 8',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #08...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
-
-STATUS: CASE FILE SEALED 🔒
-
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #08 are being compiled and will be published in a future update.
-
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
-    xPct: 0.35,
-    yPct: 0.92,
-    baseRotation: 0.06,
-    floatSpeed: 1.2,
-    floatPhase: 5.0,
-    cardType: 'photo',
-    accentHex: 0x4A4A4A,
-  },
-  {
-    id: 'case-09',
-    caseNumber: 'CASE #09',
-    title: 'Diary #09 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
-    category: 'Diary 9',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #09...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
-
-STATUS: CASE FILE SEALED 🔒
-
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #09 are being compiled and will be published in a future update.
-
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
-    xPct: 0.65,
-    yPct: 0.92,
-    baseRotation: -0.03,
-    floatSpeed: 0.75,
-    floatPhase: 2.7,
-    cardType: 'clipping',
-    accentHex: 0x4A4A4A,
-  },
-  {
-    id: 'case-10',
-    caseNumber: 'CASE #10',
-    title: 'Diary #10 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
-    category: 'Diary 10',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #10...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
-
-STATUS: CASE FILE SEALED 🔒
-
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #10 are being compiled and will be published in a future update.
-
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
-    xPct: 0.90,
-    yPct: 0.90,
-    baseRotation: 0.02,
-    floatSpeed: 0.65,
-    floatPhase: 3.9,
-    cardType: 'document',
-    accentHex: 0x4A4A4A,
-  },
-  {
-    id: 'case-11',
-    caseNumber: 'CASE #11',
-    title: 'Diary #11 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
-    category: 'Diary 11',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #11...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
-
-STATUS: CASE FILE SEALED 🔒
-
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #11 are being compiled and will be published in a future update.
-
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
-    xPct: 0.22,
-    yPct: 0.30,
-    baseRotation: -0.04,
-    floatSpeed: 0.8,
-    floatPhase: 1.5,
-    cardType: 'note',
-    accentHex: 0x4A4A4A,
-  },
-  {
-    id: 'case-12',
-    caseNumber: 'CASE #12',
-    title: 'Diary #12 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
-    category: 'Diary 12',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #12...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
-
-STATUS: CASE FILE SEALED 🔒
-
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #12 are being compiled and will be published in a future update.
-
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
-    xPct: 0.78,
-    yPct: 0.30,
-    baseRotation: 0.05,
-    floatSpeed: 0.9,
-    floatPhase: 2.1,
-    cardType: 'document',
     accentHex: 0x4A4A4A,
   },
 ];
