@@ -4,9 +4,10 @@ import { diaryCases } from '../data/diaryCases.data';
 interface Props {
   viewMode: 'board' | 'list';
   onViewModeChange: (mode: 'board' | 'list') => void;
+  onOpenNote?: () => void;
 }
 
-const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange }) => {
+const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange, onOpenNote }) => {
   const [legendOpen, setLegendOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
@@ -48,7 +49,11 @@ const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange }) => {
         style={{ pointerEvents: visible ? 'auto' : 'none' }}
       >
         <div
-          className="p-1.5 sm:p-2.5 shadow-lg"
+          onClick={onOpenNote}
+          role="button"
+          tabIndex={0}
+          title="Click to read Sheila's Welcome Memo"
+          className="p-1.5 sm:p-2.5 shadow-lg group cursor-pointer transition-all duration-200 hover:border-red-500/80"
           style={{
             background: 'rgba(10,8,6,0.88)',
             border: '1px solid rgba(204,17,17,0.6)',
@@ -56,17 +61,27 @@ const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange }) => {
             borderLeft: '3px solid #CC1111',
           }}
         >
-          <div
-            className="text-[9px] sm:text-[10px]"
-            style={{
-              fontFamily: 'Oswald, sans-serif',
-              fontWeight: 700,
-              letterSpacing: '2px',
-              color: '#CC1111',
-              marginBottom: '1px',
-            }}
-          >
-            ✎ SHEILA LAYALIA
+          <div className="flex items-center justify-between gap-2">
+            <div
+              className="text-[9px] sm:text-[10px]"
+              style={{
+                fontFamily: 'Oswald, sans-serif',
+                fontWeight: 700,
+                letterSpacing: '2px',
+                color: '#CC1111',
+                marginBottom: '1px',
+              }}
+            >
+              ✎ SHEILA LAYALIA
+            </div>
+            {onOpenNote && (
+              <span
+                className="text-[8px] px-1 py-0.2 bg-[#CC1111]/20 border border-[#CC1111]/50 text-[#F5E8CC] rounded-xs opacity-75 group-hover:opacity-100 transition-opacity hidden sm:inline-block"
+                style={{ fontFamily: '"Courier Prime", monospace' }}
+              >
+                MEMO
+              </span>
+            )}
           </div>
           <div
             className="text-[12px] sm:text-[15px]"
