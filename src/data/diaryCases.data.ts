@@ -17,13 +17,9 @@ Deictic expressions can also have a non-deictic or **anaphoric use**, where they
 
 There are also several **types of deixis**: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
 
-And now the meme makes much more sense to me. Expressions like *“gue,”* *“ini,”* *“gini,”* and *“gitu”* depend heavily on context. If someone says:
+And now the meme makes much more sense to me. This meme uses symbolic deixis. The word *gue* (“I”) is person deixis because it points to the speaker. The words *gini* (“like this”) and *gitu* (“like that”) point to a situation, and *ini* and *itu* show the “near” and “far” contrast. The meme is not gestural because nobody is pointing at anything. We are supposed to understand the meaning from the context, but the context is missing, so the words feel empty, and that is why it is funny.
 
-*“Gue nggak mau gitu.”*
-
-my first question would probably be, *“Gitu apaan?”* 😭
-
-But if I am actually part of the conversation, I might immediately understand what *“gitu”* refers to. So, even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.`,
+Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.`,
     stampType: 'OPEN',
     xPct: 0.05,
     yPct: 0.0,
