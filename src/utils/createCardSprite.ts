@@ -2,8 +2,9 @@ import * as PIXI from 'pixi.js';
 import { DiaryCase, AnimState } from '../types';
 import { getScaledPos, CARD_W, CARD_H } from './coords';
 import { STAMP_COLOUR_HEX } from '../constants/theme';
-import { getAnimState, setAnimState, setPinContainer } from './pixiUtils';
-const PIN_R = 7;
+import { getAnimState } from './pixiUtils';
+
+const PIN_R = 8;
 
 function wrapText(text: string, maxChars: number): string {
   const words = text.split(' ');
@@ -16,9 +17,9 @@ function wrapText(text: string, maxChars: number): string {
     } else {
       line = (line + ' ' + w).trim();
     }
-    if (lines.length >= 3) break;
+    if (lines.length >= 2) break; // Maximum 2 lines of excerpt on the card to prevent overlap
   }
-  if (lines.length < 3 && line) lines.push(line);
+  if (lines.length < 2 && line) lines.push(line);
   return lines.join('\n');
 }
 
@@ -26,7 +27,7 @@ function wrapText(text: string, maxChars: number): string {
 function drawJaggedRect(g: PIXI.Graphics, x: number, y: number, w: number, h: number, seed: number) {
   g.moveTo(x, y);
   
-  // Top edge (mostly straight but slightly uneven)
+  // Top edge
   g.lineTo(x + w, y);
   
   // Right edge (jagged/ripped)
@@ -38,7 +39,7 @@ function drawJaggedRect(g: PIXI.Graphics, x: number, y: number, w: number, h: nu
     g.lineTo(x + w - off, cy);
   }
   
-  // Bottom edge (mostly straight)
+  // Bottom edge
   g.lineTo(x, y + h);
   
   // Left edge (jagged/ripped)
@@ -55,14 +56,16 @@ export function createCardSprite(
   canvasW: number,
   canvasH: number,
   onSelect: (c: DiaryCase) => void,
+  initialScale: number = 1.0,
 ): PIXI.Container {
   const container = new PIXI.Container();
 
-  const pos = getScaledPos(diaryCase.xPct, diaryCase.yPct, canvasW, canvasH);
+  const pos = getScaledPos(diaryCase.xPct, diaryCase.yPct, canvasW, canvasH, initialScale);
   const baseX = pos.x;
   const baseY = pos.y;
   container.x = baseX;
   container.y = baseY;
+  container.scale.set(initialScale);
   container.pivot.set(CARD_W / 2, CARD_H / 2);
   container.rotation = diaryCase.baseRotation;
 
@@ -100,7 +103,7 @@ export function createCardSprite(
 
   // Aged board inner margin lines (except for photo polaroids)
   if (diaryCase.cardType !== 'photo') {
-    body.lineStyle(1, 0xBBAA7A, 0.3);
+    body.lineStyle(1.1, 0xBBAA7A, 0.35);
     if (diaryCase.cardType === 'clipping') {
       drawJaggedRect(body, 3, 3, CARD_W - 6, CARD_H - 6, cardSeed);
     } else {
@@ -109,28 +112,27 @@ export function createCardSprite(
   }
   container.addChild(body);
 
-  // ── Accent top bar (Only for document/note/clipping types, Polaroid has none) ──
+  // ── Accent top bar (Only for document/note/clipping types) ───────────────────
   if (diaryCase.cardType !== 'photo') {
     const accent = new PIXI.Graphics();
     accent.beginFill(diaryCase.accentHex, 0.85);
-    // Draw inside clipping/non-clipping bounds
     if (diaryCase.cardType === 'clipping') {
-      accent.drawRect(2, 2, CARD_W - 4, 24);
+      accent.drawRect(2, 2, CARD_W - 4, 22);
     } else {
-      accent.drawRect(0, 0, CARD_W, 26);
+      accent.drawRect(0, 0, CARD_W, 23);
     }
     accent.endFill();
     container.addChild(accent);
   }
 
-  // ── Tape strip (Randomly mired organic placement) ───────────────────────────
+  // ── Tape strip ──────────────────────────────────────────────────────────────
   const tape = new PIXI.Graphics();
-  tape.beginFill(0xEAE2CE, 0.42); // translucent masking tape
-  tape.drawRect(-22, -4, 44, 11);
+  tape.beginFill(0xEAE2CE, 0.45); // translucent masking tape
+  tape.drawRect(-22, -4, 44, 10);
   tape.endFill();
   tape.x = CARD_W / 2;
   tape.y = 0;
-  tape.rotation = ((cardSeed % 9) - 4) * 0.035; // organic slight rotation
+  tape.rotation = ((cardSeed % 9) - 4) * 0.035;
   container.addChild(tape);
 
   // ── Case number & Category Texts ─────────────────────────────────────────────
@@ -144,25 +146,25 @@ export function createCardSprite(
     });
     const caseNum = new PIXI.Text(diaryCase.caseNumber, caseNumStyle);
     caseNum.x = 8;
-    caseNum.y = 6;
+    caseNum.y = 5;
     container.addChild(caseNum);
 
     const catStyle = new PIXI.TextStyle({
       fontFamily: 'Oswald, sans-serif',
-      fontSize: 7.5,
+      fontSize: 8,
       fontWeight: '400',
       fill: 0xEAD8BB,
       letterSpacing: 0.8,
     });
     const cat = new PIXI.Text(diaryCase.category, catStyle);
     cat.x = CARD_W - cat.width - 8;
-    cat.y = 7;
+    cat.y = 6;
     container.addChild(cat);
   }
 
-  // ── Visual Graphic / Photo print area (POLAROID specific vs other types) ─────
-  const iconY = diaryCase.cardType === 'photo' ? 10 : 32;
-  const iconH = diaryCase.cardType === 'photo' ? 95 : 55;
+  // ── Visual Graphic / Photo print area ─────────────────────────────────────────
+  const iconY = diaryCase.cardType === 'photo' ? 10 : 30;
+  const iconH = diaryCase.cardType === 'photo' ? 98 : 38;
   const imgGfx = new PIXI.Graphics();
 
   if (diaryCase.cardType === 'photo') {
@@ -175,14 +177,14 @@ export function createCardSprite(
       imgGfx.endFill();
       imgGfx.lineStyle(1.5, 0x4a4a4a, 0.8);
       const cx = CARD_W / 2;
-      imgGfx.drawCircle(cx, iconY + 30, 11);
-      imgGfx.moveTo(cx - 18, iconY + iconH - 5);
-      imgGfx.quadraticCurveTo(cx, iconY + 54, cx + 18, iconY + iconH - 5);
-      imgGfx.lineStyle(1.5, 0xFFFFFF, 0.08);
+      imgGfx.drawCircle(cx, iconY + 30, 12);
+      imgGfx.moveTo(cx - 18, iconY + iconH - 6);
+      imgGfx.quadraticCurveTo(cx, iconY + 56, cx + 18, iconY + iconH - 6);
+      imgGfx.lineStyle(1.2, 0xFFFFFF, 0.08);
       imgGfx.moveTo(12, iconY + 8);
       imgGfx.lineTo(CARD_W - 12, iconY + iconH - 8);
     } else {
-      // Has custom image — draw light bg first, then load image on top
+      // Has custom image
       imgGfx.beginFill(0xE8E8E8, 1);
       imgGfx.drawRect(8, iconY, CARD_W - 16, iconH);
       imgGfx.endFill();
@@ -190,15 +192,11 @@ export function createCardSprite(
       const targetW = CARD_W - 16;
       const targetH = iconH;
 
-      // Use PIXI.Loader for reliable loading
-      const loaderKey = `card-img-${diaryCase.id}`;
-
       const applySprite = (texture: PIXI.Texture) => {
         const photoSprite = new PIXI.Sprite(texture);
         photoSprite.x = 8;
         photoSprite.y = iconY;
 
-        // Scale to cover the slot maintaining aspect ratio
         const imgW = texture.width;
         const imgH = texture.height;
         const scaleX = targetW / imgW;
@@ -223,10 +221,8 @@ export function createCardSprite(
 
       try {
         if (PIXI.utils.TextureCache[cardImg]) {
-          // Already cached
           applySprite(PIXI.utils.TextureCache[cardImg]);
         } else {
-          // Load via PIXI.Assets (pixi.js v7)
           PIXI.Assets.load(cardImg).then((texture: PIXI.Texture) => {
             applySprite(texture);
           }).catch((err: unknown) => {
@@ -240,37 +236,36 @@ export function createCardSprite(
   } else if (diaryCase.cardType === 'clipping') {
     // Ruled columns representing newspaper article body
     imgGfx.lineStyle(1, 0x5a554a, 0.45);
-    for (let i = 0; i < 4; i++) {
-      imgGfx.moveTo(8, iconY + 8 + i * 10);
-      imgGfx.lineTo(CARD_W - 8, iconY + 8 + i * 10);
+    for (let i = 0; i < 3; i++) {
+      imgGfx.moveTo(10, iconY + 7 + i * 10);
+      imgGfx.lineTo(CARD_W - 10, iconY + 7 + i * 10);
     }
   } else if (diaryCase.cardType === 'note') {
     // Notepad lined pattern
     imgGfx.lineStyle(1, 0x8A7E00, 0.28);
-    for (let i = 0; i < 4; i++) {
-      imgGfx.moveTo(8, iconY + 8 + i * 12);
-      imgGfx.lineTo(CARD_W - 8, iconY + 8 + i * 12);
+    for (let i = 0; i < 3; i++) {
+      imgGfx.moveTo(10, iconY + 7 + i * 10);
+      imgGfx.lineTo(CARD_W - 10, iconY + 7 + i * 10);
     }
   } else {
     // Ruled paper margin
     imgGfx.lineStyle(1.2, 0xBBAA88, 0.45);
-    imgGfx.moveTo(10, iconY + 4);
-    imgGfx.lineTo(10, iconY + iconH - 4);
-    for (let i = 0; i < 4; i++) {
-      imgGfx.moveTo(14, iconY + 8 + i * 11);
-      imgGfx.lineTo(CARD_W - 8, iconY + 8 + i * 11);
+    imgGfx.moveTo(12, iconY + 3);
+    imgGfx.lineTo(12, iconY + iconH - 3);
+    for (let i = 0; i < 3; i++) {
+      imgGfx.moveTo(18, iconY + 7 + i * 9);
+      imgGfx.lineTo(CARD_W - 10, iconY + 7 + i * 9);
     }
   }
   container.addChild(imgGfx);
 
-  // ── Title & Content texts ───────────────────────────────────────────────────
-  const textYStart = iconY + iconH + 6;
-
+  // ── Title & Content texts (Fixed Vertical Zones to guarantee zero overlap) ──
   if (diaryCase.cardType === 'photo') {
-    // Polaroid title text written underneath the photograph frame
+    // Zone 1: Title (Starts right under photo at y=114, max 2 lines)
     const photoTitleStyle = new PIXI.TextStyle({
       fontFamily: 'Special Elite, serif',
       fontSize: 10,
+      lineHeight: 12.5,
       fill: 0x1c1a16,
       wordWrap: true,
       wordWrapWidth: CARD_W - 14,
@@ -279,13 +274,13 @@ export function createCardSprite(
     const photoTitle = new PIXI.Text(diaryCase.title, photoTitleStyle);
     photoTitle.anchor.set(0.5, 0);
     photoTitle.x = CARD_W / 2;
-    photoTitle.y = textYStart + 2;
+    photoTitle.y = iconY + iconH + 5; // y = 113
     container.addChild(photoTitle);
 
-    // Polaroid date written below the title like real handwriting
+    // Zone 2: Date (Locked at fixed anchor y=152 so title never touches it)
     const handwrittenDateStyle = new PIXI.TextStyle({
       fontFamily: 'Courier Prime, monospace',
-      fontSize: 8,
+      fontSize: 8.5,
       fontStyle: 'italic',
       fontWeight: 'bold',
       fill: 0x7A2A1A,
@@ -294,56 +289,57 @@ export function createCardSprite(
     const handDateText = new PIXI.Text(diaryCase.date, handwrittenDateStyle);
     handDateText.anchor.set(0.5, 0);
     handDateText.x = CARD_W / 2;
-    handDateText.y = textYStart + photoTitle.height + 4;
+    handDateText.y = 153; // Fixed anchor zone
     container.addChild(handDateText);
   } else {
-    // Normal case cards (Note, Clipping, Document)
+    // Zone 1: Title (Starts at y=72)
     const titleStyle = new PIXI.TextStyle({
       fontFamily: 'Special Elite, serif',
-      fontSize: 9.5,
+      fontSize: 10,
+      lineHeight: 12.5,
       fill: 0x1A1210,
       wordWrap: true,
-      wordWrapWidth: CARD_W - 12,
+      wordWrapWidth: CARD_W - 16,
     });
     const titleText = new PIXI.Text(diaryCase.title, titleStyle);
-    titleText.x = 7;
-    titleText.y = textYStart;
+    titleText.x = 8;
+    titleText.y = 72;
     container.addChild(titleText);
 
-    // Excerpt text & divider (only if excerpt is provided)
     if (diaryCase.excerpt) {
+      // Divider locked at fixed anchor y=102
       const divider = new PIXI.Graphics();
       divider.lineStyle(1, 0xBBAA7A, 0.45);
-      const divY = textYStart + titleText.height + 4;
-      divider.moveTo(7, divY);
-      divider.lineTo(CARD_W - 7, divY);
+      divider.moveTo(8, 102);
+      divider.lineTo(CARD_W - 8, 102);
       container.addChild(divider);
 
+      // Zone 2: Excerpt (Locked at fixed anchor y=106)
       const excerptStyle = new PIXI.TextStyle({
         fontFamily: 'Courier Prime, monospace',
         fontSize: 8,
+        lineHeight: 10.5,
         fill: 0x3A3028,
         wordWrap: true,
-        wordWrapWidth: CARD_W - 12,
-        leading: 0.5,
+        wordWrapWidth: CARD_W - 16,
       });
-      const wrapped = wrapText(diaryCase.excerpt || '', 26);
+      const wrapped = wrapText(diaryCase.excerpt || '', 24);
       const excerptText = new PIXI.Text(wrapped, excerptStyle);
-      excerptText.x = 7;
-      excerptText.y = divY + 4;
+      excerptText.x = 8;
+      excerptText.y = 106;
       container.addChild(excerptText);
     }
   }
 
-  // ── Stamp overlay (Slightly smaller stamp) ───────────────────────────────────
+  // ── Stamp overlay (Zone 3: Locked at fixed anchor y=198 at card bottom) ────
   const stampContainer = new PIXI.Container();
   stampContainer.x = CARD_W / 2;
-  stampContainer.y = CARD_H - 26;
+  stampContainer.y = CARD_H - 24; // y = 200
 
   const stampBg = new PIXI.Graphics();
   const stampColour = STAMP_COLOUR_HEX[diaryCase.stampType] ?? 0x8B0000;
-  stampBg.lineStyle(2, stampColour, 0.7);
-  stampBg.drawRoundedRect(-36, -10, 72, 20, 3);
+  stampBg.lineStyle(1.6, stampColour, 0.75);
+  stampBg.drawRoundedRect(-36, -9, 72, 18, 3);
   stampContainer.addChild(stampBg);
 
   const stampStyle = new PIXI.TextStyle({
@@ -357,50 +353,46 @@ export function createCardSprite(
   const stampText = new PIXI.Text(diaryCase.stampType, stampStyle);
   stampText.anchor.set(0.5, 0.5);
   stampContainer.addChild(stampText);
-  stampContainer.rotation = -0.18;
-  stampContainer.alpha = 0.72;
+  stampContainer.rotation = -0.14;
+  stampContainer.alpha = 0.75;
   container.addChild(stampContainer);
 
-  // ── Red Pin with 3D shadow & metallic pin needles ────────────────────────────
+  // ── Red Pin with 3D shadow ───────────────────────────────────────────────────
   const pinContainer = new PIXI.Container();
   pinContainer.x = CARD_W / 2;
   pinContainer.y = -2;
 
-  // Pin Shadow
   const pinShadow = new PIXI.Graphics();
-  pinShadow.beginFill(0x000000, 0.32);
+  pinShadow.beginFill(0x000000, 0.35);
   pinShadow.drawCircle(1.5, 2.5, PIN_R - 0.5);
   pinShadow.endFill();
   pinContainer.addChild(pinShadow);
 
-  // Metallic needle lines sticking into board
   const pinNeedle = new PIXI.Graphics();
-  pinNeedle.lineStyle(1.2, 0x888888, 0.65);
+  pinNeedle.lineStyle(1.3, 0x888888, 0.7);
   pinNeedle.moveTo(0, 0);
-  pinNeedle.lineTo(1.5, 4.5);
+  pinNeedle.lineTo(1.8, 5);
   pinContainer.addChild(pinNeedle);
 
-  // Pin Head dome
   const pinHead = new PIXI.Graphics();
   pinHead.beginFill(0xCC1111, 1.0);
   pinHead.drawCircle(0, 0, PIN_R);
   pinHead.endFill();
-  // Highlight gloss
-  pinHead.beginFill(0xFFFFFF, 0.55);
-  pinHead.drawCircle(-1.8, -1.8, 1.8);
+  pinHead.beginFill(0xFFFFFF, 0.6);
+  pinHead.drawCircle(-2, -2, 2);
   pinHead.endFill();
   pinContainer.addChild(pinHead);
 
   container.addChild(pinContainer);
 
-  // ── Interactivity & Touch Hit Area ─────────────────────────────────────────────
+  // ── Interactivity & Touch Hit Area ───────────────────────────────────────────
   container.interactive = true;
   (container as unknown as Record<string, unknown>).eventMode = 'static';
   container.cursor = 'pointer';
 
   container.on('pointerover', () => {
     const s = getAnimState(container);
-    if (s) { s.targetScale = 1.07; s.isHovered = true; }
+    if (s) { s.targetScale = 1.06; s.isHovered = true; }
   });
   container.on('pointerout', () => {
     const s = getAnimState(container);
@@ -442,22 +434,22 @@ export function createCardSprite(
   container.on('pointertap', doSelect);
   container.on('click', doSelect);
 
-  // ── Attach animation state ────────────────────────────────────────────────────
+  // ── Attach animation state ──────────────────────────────────────────────────
   const animState: AnimState = {
     baseX,
     baseY,
     baseRotation: diaryCase.baseRotation,
     floatSpeed: diaryCase.floatSpeed,
     floatPhase: diaryCase.floatPhase,
-    currentScale: 1.0,
+    currentScale: initialScale,
     targetScale: 1.0,
     pinPulse: 0,
     isHovered: false,
     caseData: diaryCase,
-    responsiveScale: 1.0,
+    responsiveScale: initialScale,
   };
   (container as any).__animState = animState;
-  (container as any).__pin = pinContainer; // targets the entire pin container for pulse animation
+  (container as any).__pin = pinContainer;
 
   return container;
 }
