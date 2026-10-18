@@ -169,7 +169,14 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
               className="text-sm leading-relaxed whitespace-pre-line"
               style={{ color: '#2a1e10', lineHeight: '1.75' }}
             >
-              {selected.content.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, idx) => {
+              {selected.content.split(/(\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, idx) => {
+                if (part.startsWith('***') && part.endsWith('***')) {
+                  return (
+                    <strong key={idx} style={{ fontWeight: 800, fontStyle: 'italic', color: '#000000' }}>
+                      {part.slice(3, -3)}
+                    </strong>
+                  );
+                }
                 if (part.startsWith('**') && part.endsWith('**')) {
                   return (
                     <strong key={idx} style={{ fontWeight: 800, color: '#000000' }}>

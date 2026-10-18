@@ -108,26 +108,42 @@ Xiang, M., et al. (2024). *Introduction to Pragmatics* (Peking University Lingui
   {
     id: 'case-04',
     caseNumber: 'CASE #04',
-    title: 'Diary #04 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
+    title: 'Plot Twist: Speech Acts Are Hiding in Every Chat',
+    date: '13 OCT 2026',
     category: 'Diary 4',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #04...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
+    imageUrl: '/Gambar/content diary 4.jpeg',
+    imageCaption: 'source: personal documentation',
+    content: `Okay, quick quiz. Your friend texts you: *“km udah makan belom”* (“have you eaten yet?”). Easy question, right? Just answer “yes” or “no” and move on! But wait. Why did she ask? Is she curious about your lunch, or is she about to invite you somewhere? In my chat, it was the second one. Stay with me, because by the end of this post you’ll never read a chat the same way again. 🙂
 
-STATUS: CASE FILE SEALED 🔒
+This is something called ***a speech act***. It means an utterance that *does* something, such as promising, requesting, apologizing, or inviting. This idea started as a challenge to an older view. Some philosophers believed a sentence is meaningful only if we can test it as true or false. But how can we test “I name this ship Queen Elizabeth”? We can’t. So Austin (1962) called such sentences *performatives*, because they do things. Later, he decided that *all* utterances perform some action (Xiang et al., 2024).
 
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #04 are being compiled and will be published in a future update.
+Austin also noticed that every speech act has three parts. The ***locution*** is the words themselves, the ***illocution*** is what the speaker wants to do with them, and the ***perlocution*** is the effect on the hearer. My friend’s text *“aku tkt ga denger alarm”* (“I’m afraid I won’t hear my alarm”) shows this well. The words are the locution. The purpose is to explain why she needs help waking up, which is the illocution. What I do next is the perlocution, and it is never guaranteed.
 
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
+So what kinds of speech acts are there? **Austin (1962)** sorted them into **five classes**, mostly by the verbs we use. ***Verdictives*** give a judgment, like “I’d rank this the best noodle shop in town.” ***Exercitives*** use power or influence, like “I appoint you group leader” or “I urge you to rest.” ***Commissives*** commit the speaker to something, like “I promise to call you.” ***Behabitives*** show social attitudes, like “Congratulations!” or “I’m sorry.” And ***expositives*** explain our words in a conversation or argument, like “I deny that I said that.”
+
+Austin’s list was a good start, but his student ***Searle*** thought it needed clearer rules for sorting. He (1979) built a new list of five types based on three ideas: the *purpose* of the act, the match between *words and world*, and the speaker’s *feeling or attitude*. ***Assertives*** state what is true, like “Bandung is cold today.” *Directives* try to make someone act, like “Please send me the file.” ***Commissives*** commit the speaker to a future act, like “I’ll bring the notes tomorrow.” ***Expressives*** show feelings, like “Thank you so much!” And ***declarations*** change reality, like a boss saying “You’re hired.” Notice that both Austin and Searle have ***commissives***. That is the one type that is almost the same in both lists. Searle’s list is the standard one today, so I’ll use it for my chat.
+
+In my real chat. The first message, *“sheii klo mau brkt kuliah tlongg banguninn aku yhh ketok2 ajaa”* (“Shei, if you leave for campus, please wake me, just knock”), is a directive. The second, *“aku tkt ga denger alarm,”* is an assertive that gives the reason. The third, *“jujur bat aku baru bangun nek”* (“honestly, I only just woke up”), is also an assertive, but it may be a small apology too. The last two messages, *“km udah makan belom”* and *“shei mau kulkul gaa,”* are directives: a question and an invitation. My chat has no clear commissive, expressive, or declaration, so real conversations don’t always use all five types.
+
+The last two messages connect in an interesting way. “Have you eaten yet?” looks like a question, but it works as a hint before the invitation. This is an *indirect speech act*: the form and the real function don’t match. Searle’s famous example is “Can you pass the salt?”, which is really a request. We understand these acts because we share background knowledge and can infer what the speaker means (Xiang et al., 2024).
+
+Indirectness is not the only way to make a request easier to accept. People can also make it *polite*. The first message uses *tlongg* (“please”) and *ketok2 ajaa* (“just knock”) to make the favor sound small, and the stretched letters (*sheii*, *tlongg*) add warmth like a friendly voice. It also gives a reason: “I’m afraid I won’t hear my alarm.” So a good request depends not only on *what* we ask, but also on *how* we ask it.
+
+Of course, my labels are only interpretations, and speech acts change across cultures, so I should always check the context. Still, looking back, I have been performing speech acts my whole life without noticing, and now every message I send feels like a small action that I choose.
+
+**References**
+- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
+- Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
+- Searle, J. R. (1979). *Expression and meaning*. Cambridge University Press.`,
+    stampType: 'OPEN',
     xPct: 0.05,
     yPct: 1.0,
     baseRotation: 0.04,
     floatSpeed: 0.7,
     floatPhase: 0.7,
-    cardType: 'document',
-    accentHex: 0x4A4A4A,
+    cardType: 'photo',
+    cardImageUrl: '/Gambar/cover diary 4.jpeg',
+    accentHex: 0xB22222,
   },
 
   {
