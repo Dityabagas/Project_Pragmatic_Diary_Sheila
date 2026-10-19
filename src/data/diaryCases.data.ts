@@ -11,7 +11,9 @@ export const diaryCases: DiaryCase[] = [
     imageCaption: 'source: @ini.abibbb on ig',
     content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just *gini*, *gitu*, *ini*, *itulah* without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
 
-Deixis can simply be understood as **“pointing through language.”** We use certain expressions to point to people, places, things, time, or parts of a conversation. For example, “Can you pass me that one?” while pointing at a book is **gestural deixis**, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, **symbolic deixis** depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it.
+According to Yule (1996) deixis can simply be understood as **“pointing through language.”** We use certain expressions to point to people, places, things, time, or parts of a conversation. 
+
+For example, “Can you pass me that one?” while pointing at a book is **gestural deixis**, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, **symbolic deixis** depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it (Xiang et al., 2024).
 
 Deictic expressions can also have a non-deictic or **anaphoric use**, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
 
@@ -19,7 +21,11 @@ There are also several **types of deixis**: person deixis (I, you, we), time dei
 
 And now the meme makes much more sense to me. This meme uses symbolic deixis. The word *gue* (“I”) is person deixis because it points to the speaker. The words *gini* (“like this”) and *gitu* (“like that”) point to a situation, and *ini* and *itu* show the “near” and “far” contrast. The meme is not gestural because nobody is pointing at anything. We are supposed to understand the meaning from the context, but the context is missing, so the words feel empty, and that is why it is funny.
 
-Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.`,
+Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.
+
+References
+- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
+- Yule, G. (1996). Pragmatics. Oxford University Press.`,
     stampType: 'OPEN',
     xPct: 0.05,
     yPct: 0.0,
@@ -43,15 +49,28 @@ Even though the meme looks like someone is saying a whole lot of nothing, it act
 
 Then I thought, wait, is this pragmatics?
 
-It actually connects to **presupposition**, which is basically an assumption that exists in the background of what someone says. For example, when someone says, “Sarah stopped smoking,” the sentence assumes that Sarah used to smoke, even though that information is not directly stated. While learning about presupposition, I also came across **entailment**, which is closely related but focuses on what must be true based on the meaning of the sentence itself. So, presupposition is more about what is assumed in the background, while entailment is about what is logically contained in the meaning.
-                                                                                                                
-And apparently, presupposition has different types too: **existential, lexical, factive, non-factive, structural, and counterfactual**. They depend on the words or structures that trigger the assumption, which makes me realize that we make these kinds of assumptions in language more often than we probably notice.
+It actually connects to **presupposition**. According to Yule (1996) presupposition is basically an assumption that exists in the background of what someone says. For example, when someone says, “Sarah stopped smoking,” the sentence assumes that Sarah used to smoke, even though that information is not directly stated. While learning about presupposition, I also came across **entailment**, which is closely related but focuses on what must be true based on the meaning of the sentence itself. So, presupposition is more about what is assumed in the background, while entailment is about what is logically contained in the meaning.
 
-Going back to Darcy, his words express an evaluation of Elizabeth’s appearance. He treats her attractiveness as relevant to his decision about whether she is worth dancing with and presents her as not attractive enough according to his standard. But Elizabeth does not stop at the literal meaning. From his words and the situation surrounding them, she begins to see Darcy as proud and judgmental. So, besides presupposition, another pragmatic element we can see in this scene is **pragmatic inference**, where Elizabeth draws a conclusion about Darcy’s attitude based on what he says and the context.
+One interesting fact about presupposition is that even questions can contain hidden assumptions. For example, “When did you stop lying to me?” presupposes that the person lied before. Surprisingly, even if the sentence is negative, its presupposition can remain, as in “I don't regret leaving,” which still suggests that the person left. This shows how a few words can shape our understanding of a situation without directly stating everything they imply.
+
+And apparently, presupposition has different types too: 
+• Existential (something exists) 
+• Lexical (something happened before) 
+• Factive (something is true) 
+• Non-factive (something may not be true) 
+• Structural (the sentence suggests something is true) 
+• Counterfactual (something is contrary to reality)
+
+Going back to Darcy, his words express an evaluation of Elizabeth’s appearance. This can be categorized as **lexical presupposition** because the word “tempt” suggests that Elizabeth’s attractiveness could affect Darcy’s interest in her. Although Darcy says she is not handsome enough, his words also assume that her appearance matters to his interest.
 
 What I find interesting is that communication is rarely just about what is explicitly said. We also understand what is assumed in the background and what the context leads us to infer. One sentence from Darcy changed how Elizabeth saw him, showing how a few words can carry much more meaning than what is actually spoken.
 
-And honestly, that is what makes pragmatics so interesting. You can watch a scene you have seen before, notice one little line, and suddenly realize there is a whole layer of meaning hiding behind it.`,
+And honestly, that is what makes pragmatics so interesting. You can watch a scene you have seen before, notice one little line, and suddenly realize there is a whole layer of meaning hiding behind it. 
+
+Reference 
+Yule, G. (1996). Pragmatics. Oxford University Press.`,
+
+
     stampType: 'OPEN',
     xPct: 0.50,
     yPct: 0.0,
@@ -149,26 +168,48 @@ Of course, my labels are only interpretations, and speech acts change across cul
   {
     id: 'case-05',
     caseNumber: 'CASE #05',
-    title: 'Diary #05 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
+    title: 'What Is Pragmatics? Its Meaning, Its History, and Why We Need It',
+    date: '04 SEPT 2026',
     category: 'Diary 5',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #05...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
+    imageUrl: '/Gambar/cover diary 5.jpeg',
+    imageCaption: 'source: pinterest',
+    content: `When someone asks, “Can you pass the book?” Technically that’s a yes/no question about whether you’re able to, but nobody says “Yes, I can” and then sits there with folded hands. Or picture a storm hammering the roof while your friend says, “Wow, lovely weather.” The words say lovely, everyone hears the opposite, and no one needs it explained.
 
-STATUS: CASE FILE SEALED 🔒
+**So how do we understand things that were never actually said?**
 
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #05 are being compiled and will be published in a future update.
+The answer is **pragmatics**. Yule (1996) defines it as the study of meaning that a speaker communicates and a listener interprets, which is a fancy way of saying it’s about what people mean, not only what their words say. And you already do it perfectly, every day, with zero training.
 
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
+Welcome to my diary. Before the real examples, here’s a quick map of what’s coming.
+
+**What is pragmatics, exactly?** It’s meaning in use. Grammar tells you how to build a sentence, and semantics tells you what the words mean in a dictionary, but pragmatics asks a different question like what does this person mean, right now, in this situation? *“It’s cold in here”* can be a comment about the weather, a request to shut the window, or a complaint about the air conditioner. The words stay the same while the context decides which meaning you get.
+
+**Where did it come from?** Morris (1938) started things by splitting the study of signs into parts, and pragmatics became the part about how people actually use signs. Then Austin (1962) surprised philosophers by arguing that words don’t just describe the world, they act on it. Searle (1969) organized that idea into a clearer theory of speech acts. Grice (1975) took a different angle and asked how we catch meaning that isn’t spoken at all. His answer was that people follow an unwritten agreement to cooperate in conversation, so when someone seems to break it, we hunt for the hidden meaning. Brown and Levinson (1987) later added politeness, which explains why we soften requests instead of blurting them out.
+
+**Why does it matter?** Most communication is indirect, and pragmatics explains why we still understand each other. It also explains why things go wrong. A sentence that sounds polite in one culture can sound rude in another, and for EFL learners that gap is a real danger. Thomas (1983) calls it **pragmatic failure**: perfect grammar, a rich vocabulary, and still misunderstood because of how something was said. Knowing English words isn’t the same as knowing how to use English with people.
+
+After this map, I’ll test each idea on real examples: text messages, ordinary conversations, the small stuff we say without thinking.
+
+Before I studied this, I thought communication was simple. You say something, the other person receives it, done. Now it feels more like a quiet game where both sides keep guessing and filling gaps.
+
+So, are you curious about what these diaries will discuss? Please stay with me. By the end, I promise you will never hear a simple sentence the same way again.
+
+**References**
+• Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
+• Brown, P., & Levinson, S. C. (1987). *Politeness: Some universals in language usage*. Cambridge University Press.
+• Grice, H. P. (1975). Logic and conversation. In P. Cole & J. Morgan (Eds.), *Syntax and semantics, Vol. 3: Speech acts* (pp. 41-58). Academic Press.
+• Morris, C. W. (1938). *Foundations of the theory of signs*. University of Chicago Press.
+• Searle, J. R. (1969). *Speech acts*. Cambridge University Press.
+• Thomas, J. (1983). Cross-cultural pragmatic failure. *Applied Linguistics*, 4(2), 91-112.
+• Yule, G. (1996). *Pragmatics*. Oxford University Press.`,
+    stampType: 'OPEN',
     xPct: 0.50,
     yPct: 1.0,
     baseRotation: -0.02,
     floatSpeed: 1.1,
     floatPhase: 3.5,
-    cardType: 'note',
-    accentHex: 0x4A4A4A,
+    cardType: 'photo',
+    cardImageUrl: '/Gambar/cover diary 5.jpeg',
+    accentHex: 0xB22222,
   },
 
   {
@@ -194,5 +235,6 @@ Stay tuned for Sheila Layalia's next pragmatics investigation!`,
     floatPhase: 1.8,
     cardType: 'clipping',
     accentHex: 0x4A4A4A,
-  },
-];
+  }, 
+
+]
