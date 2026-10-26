@@ -23,7 +23,7 @@ And now the meme makes much more sense to me. This meme uses symbolic deixis. Th
 
 Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.
 
-References
+**References**
 - Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
 - Yule, G. (1996). Pragmatics. Oxford University Press.`,
     stampType: 'OPEN',
@@ -67,7 +67,7 @@ What I find interesting is that communication is rarely just about what is expli
 
 And honestly, that is what makes pragmatics so interesting. You can watch a scene you have seen before, notice one little line, and suddenly realize there is a whole layer of meaning hiding behind it. 
 
-Reference 
+**Reference** 
 Yule, G. (1996). Pragmatics. Oxford University Press.`,
 
 
@@ -151,9 +151,9 @@ Indirectness is not the only way to make a request easier to accept. People can 
 Of course, my labels are only interpretations, and speech acts change across cultures, so I should always check the context. Still, looking back, I have been performing speech acts my whole life without noticing, and now every message I send feels like a small action that I choose.
 
 **References**
-- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
 - Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
-- Searle, J. R. (1979). *Expression and meaning*. Cambridge University Press.`,
+- Searle, J. R. (1979). *Expression and meaning*. Cambridge University Press.
+Xiang, M., Jia, M., & Bu, X. (2024). Introduction to pragmatics (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2`,
     stampType: 'OPEN',
     xPct: 0.05,
     yPct: 1.0,
@@ -215,26 +215,48 @@ So, are you curious about what these diaries will discuss? Please stay with me. 
   {
     id: 'case-06',
     caseNumber: 'CASE #06',
-    title: 'Diary #06 — [SEALED DOSSIER]',
-    date: 'UPCOMING',
+    title: 'Please, Sorry, Thank You: What Politeness Is Really About',
+    date: '20 OCT 2026',
     category: 'Diary 6',
-    excerpt: 'Case file sealed. Awaiting upcoming field notes and case study analysis for Pragmatics Case #06...',
-    content: `FILE DATE: UPCOMING
-CLASSIFICATION: CONFIDENTIAL RESEARCH LOG
+    imageUrl: '/Gambar/content diary 6.jpeg',
+    imageCaption: 'source: personal documentation',
+    content: `Have you ever heard about the three magic words that people always hope we won't forget? Thank you, please, and sorry. Our parents taught them to us when we were small, and today I learned they connect to something bigger: **politeness**. 😊
 
-STATUS: CASE FILE SEALED 🔒
+At first, I thought politeness was just those three words. But the book says people understand it differently. Japanese speakers see it as fitting yourself properly into the group (Ide, 1989), Chinese speakers see it as respect, modesty, warmth, and refinement (Gu, 1990), and the Western view is about protecting a person's "face" (Brown & Levinson, 1987) (Xiang et al., 2024). The book also says politeness is not obligatory, it has degrees, and it depends on what is normal in a situation. For example, it shows four ways to ask for water, from *"Fetch me some water!"* to *"I beg you for your mercy to fetch me some water."* The last one is too much, so it sounds hypocritical and impolite.
 
-This pragmatics diary entry is currently locked. The field notes and linguistic analysis for Case #06 are being compiled and will be published in a future update.
+Sometimes politeness reminds me of the Regency and Victorian era. For example, people then wrote *“Your most obedient servant”* and nobody thought it was fake, because strict ranks made that style normal. So politeness depends on what people expect, not only on the words.
 
-Stay tuned for Sheila Layalia's next pragmatics investigation!`,
-    stampType: 'CLOSED',
+So why do we soften requests at all? Brown and Levinson say everyone wants to be liked (**positive face**) and wants freedom from being forced (**negative face**). Some acts threaten both, and how heavy the threat is depends on social distance, power, and cost (Xiang et al., 2024). To protect face, we can show closeness, like Lao Wang ("dear Wang", "bro") or "233" instead of hehe (**positive politeness**). We can respect freedom, like *"Excuse me, could you close the door?"* (**negative politeness**). Or we can hint, like *"The room is so stuffy"* (**off-record**).
+
+I checked two messages I sent to a close friend. The first one was *"record this pleasee ehehee."* It is still a direct command, but please, the stretched spelling, and the laugh soften it. That is **positive politeness**, because casual language shows closeness, and please is also facilitative: it makes my friend more likely to help. The second one was *"kuliah ga? boleh minta tolong ga"* ("Going to class? Can I ask for a favor?"). I ask permission first and give her a choice, so it is mainly **negative politeness**. It also matches Leech's **Tact Maxim**, which lowers the cost for the other person (Leech, 2014; Xiang et al., 2024). The casual "ga" adds a little positive politeness too, because real chats often mix both.
+
+Do I still need to be polite with a close friend? The book says politeness is not obligatory, but I still do it in a friend-sized style. Our social distance is low, so a playful *“pleasee”* is enough. Very formal words would sound strange, even sarcastic.
+
+I also learned that Leech sees politeness as part of **conversational implicature**. His idea is to give high value to others and low value to yourself, with maxims such as Tact, Generosity, Approbation, Modesty, Agreement, and Sympathy (Leech, 2014). A compliment like *"You are such a wonderful person"* and a modest reply like *"You are flattering me. I'm not that good"* are good examples. Politeness can even look polite but mean the opposite. When Tom says *"John, you are as fast as light"* about a slow runner, it is irony.
+
+So, back to the three magic words. They are real politeness markers, but they are not magic. Sarcasm can ruin them, and too many can sound fake.
+
+"Magic words" is a folk term, not a pragmatics term. In the book's language, it is closer to **first-order politeness**, the way ordinary people see it (Locher & Watts, 2005).
+
+Politeness is **words + context + sincerity + what people expect**. This is exactly why it belongs to pragmatics. Pragmatics isn't only about what words mean, it's about *why* we choose them with different people, in different places and times.
+
+**References**
+- Brown, P., & Levinson, S. C. (1987). *Politeness: Some universals in language usage*. Cambridge University Press.
+- Gu, Y. (1990). Politeness phenomena in modern Chinese. *Journal of Pragmatics*, 14(2), 237-257.
+- Ide, S. (1989). Formal forms and discernment: Two neglected aspects of universals of linguistic politeness. *Multilingua*, 8(2-3), 223-248.
+- Leech, G. N. (1983). *Principles of pragmatics*. Longman.
+- Leech, G. (2014). *The pragmatics of politeness*. Oxford University Press.
+- Locher, M. A., & Watts, R. J. (2005). Politeness theory and relational work. *Journal of Politeness Research*, 1(1), 9-33.
+- Xiang, M., Jia, M., & Bu, X. (2024). Introduction to pragmatics (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2`,
+    stampType: 'OPEN',
     xPct: 0.95,
     yPct: 1.0,
     baseRotation: 0.03,
     floatSpeed: 0.85,
     floatPhase: 1.8,
-    cardType: 'clipping',
-    accentHex: 0x4A4A4A,
+    cardType: 'photo',
+    cardImageUrl: '/Gambar/cover diary 6.jpeg',
+    accentHex: 0xB22222,
   }, 
 
 ]

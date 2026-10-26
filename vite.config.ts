@@ -15,8 +15,10 @@ try {
     for (const f of files) {
       const srcFile = path.join(rootGambar, f)
       const destFile = path.join(publicGambar, f)
-      if (fs.statSync(srcFile).isFile() && !fs.existsSync(destFile)) {
-        fs.copyFileSync(srcFile, destFile)
+      if (fs.statSync(srcFile).isFile()) {
+        if (!fs.existsSync(destFile) || fs.statSync(srcFile).mtimeMs > fs.statSync(destFile).mtimeMs) {
+          fs.copyFileSync(srcFile, destFile)
+        }
       }
     }
   }
