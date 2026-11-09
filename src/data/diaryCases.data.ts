@@ -51,9 +51,45 @@ So, are you curious about what these diaries will discuss? Please stay with me. 
   {
     id: 'case-02',
     caseNumber: 'CASE #02',
+    title: 'Deixis: Wait… This Meme Is Actually Pragmatics?',
+    date: '08 SEPT 2026',
+    category: 'Diary 2',
+    imageUrl: '/Gambar/MEME PRAGMATICS.jpeg',
+    imageCaption: 'source: @ini.abibbb on ig',
+    content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just *gini*, *gitu*, *ini*, *itulah* without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
+
+According to Yule (1996) deixis can simply be understood as **“pointing through language.”** We use certain expressions to point to people, places, things, time, or parts of a conversation. 
+
+For example, “Can you pass me that one?” while pointing at a book is **gestural deixis**, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, **symbolic deixis** depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it (Xiang et al., 2024).
+
+Deictic expressions can also have a non-deictic or **anaphoric use**, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
+
+There are also several **types of deixis**: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
+
+And now the meme makes much more sense to me. This meme uses symbolic deixis. The word *gue* (“I”) is person deixis because it points to the speaker. The words *gini* (“like this”) and *gitu* (“like that”) point to a situation, and *ini* and *itu* show the “near” and “far” contrast. The meme is not gestural because nobody is pointing at anything. We are supposed to understand the meaning from the context, but the context is missing, so the words feel empty, and that is why it is funny.
+
+Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.
+
+**References**
+- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
+- Yule, G. (1996). Pragmatics. Oxford University Press.`,
+    stampType: 'OPEN',
+    xPct: 0.50,
+    yPct: 0.0,
+    baseRotation: 0.03,
+    floatSpeed: 1.0,
+    floatPhase: 1.2,
+    cardType: 'photo',
+    cardImageUrl: '/Gambar/MEME SPIDER-MAN.jpeg',
+    accentHex: 0xB22222,
+  },
+
+  {
+    id: 'case-03',
+    caseNumber: 'CASE #03',
     title: 'I Rewatched Pride and Prejudice and Found Presupposition',
     date: '22 SEPT 2026',
-    category: 'Diary 2',
+    category: 'Diary 3',
     imageUrl: '/Gambar/content diary 2.jpeg',
     imageCaption: 'Pride and Prejudice (2005)',
     content: `When I rewatched Pride and Prejudice, I noticed a scene I had probably overlooked before. During the ball, Mr. Darcy says about Elizabeth, **“She's barely tolerable. I dare to say but not handsome enough to tempt me.”** What caught my attention was that Elizabeth actually heard him. From her expression, we can see how surprised and offended she was, and after that moment, her perception of Darcy started to change.
@@ -80,25 +116,23 @@ And honestly, that is what makes pragmatics so interesting. You can watch a scen
 
 **Reference** 
 Yule, G. (1996). Pragmatics. Oxford University Press.`,
-
-
     stampType: 'OPEN',
-    xPct: 0.50,
+    xPct: 0.95,
     yPct: 0.0,
-    baseRotation: 0.03,
-    floatSpeed: 1.0,
-    floatPhase: 1.2,
+    baseRotation: -0.03,
+    floatSpeed: 0.9,
+    floatPhase: 2.3,
     cardType: 'photo',
     cardImageUrl: '/Gambar/cover diary 2.jpeg',
     accentHex: 0xB22222,
   },
 
   {
-    id: 'case-03',
-    caseNumber: 'CASE #03',
+    id: 'case-04',
+    caseNumber: 'CASE #04',
     title: 'Say Less, Mean More: A Diary on Implicature',
     date: '06 OCT 2026',
-    category: 'Diary 3',
+    category: 'Diary 4',
     imageUrl: '/Gambar/content diary 3.jpeg',
     imageCaption: 'source: personal documentation',
     content: `Have you ever received a message that says only *"Fine."* and then spent twenty minutes wondering if the person is angry? 😅 Today I had a mini version of that with my brother.
@@ -125,22 +159,22 @@ My takeaway is that meaning isn't only in the words. It is also in the context, 
 **Reference**
 Xiang, M., et al. (2024). *Introduction to Pragmatics* (Peking University Linguistics Research 9). Peking University Press / Springer. https://doi.org/10.1007/978-981-99-6464-2`,
     stampType: 'OPEN',
-    xPct: 0.95,
-    yPct: 0.0,
-    baseRotation: -0.03,
-    floatSpeed: 0.9,
-    floatPhase: 2.3,
+    xPct: 0.05,
+    yPct: 1.0,
+    baseRotation: 0.04,
+    floatSpeed: 0.7,
+    floatPhase: 0.7,
     cardType: 'photo',
     cardImageUrl: '/Gambar/cover diary 3.jpeg',
     accentHex: 0xB22222,
   },
 
   {
-    id: 'case-04',
-    caseNumber: 'CASE #04',
+    id: 'case-05',
+    caseNumber: 'CASE #05',
     title: 'Plot Twist: Speech Acts Are Hiding in Every Chat',
     date: '13 OCT 2026',
-    category: 'Diary 4',
+    category: 'Diary 5',
     imageUrl: '/Gambar/content diary 4.jpeg',
     imageCaption: 'source: personal documentation',
     content: `Okay, quick quiz. Your friend texts you: *“km udah makan belom”* (“have you eaten yet?”). Easy question, right? Just answer “yes” or “no” and move on! But wait. Why did she ask? Is she curious about your lunch, or is she about to invite you somewhere? In my chat, it was the second one. Stay with me, because by the end of this post you’ll never read a chat the same way again. 🙂
@@ -166,49 +200,13 @@ Of course, my labels are only interpretations, and speech acts change across cul
 - Searle, J. R. (1979). *Expression and meaning*. Cambridge University Press.
 Xiang, M., Jia, M., & Bu, X. (2024). Introduction to pragmatics (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2`,
     stampType: 'OPEN',
-    xPct: 0.05,
-    yPct: 1.0,
-    baseRotation: 0.04,
-    floatSpeed: 0.7,
-    floatPhase: 0.7,
-    cardType: 'photo',
-    cardImageUrl: '/Gambar/cover diary 4.jpeg',
-    accentHex: 0xB22222,
-  },
-
-  {
-    id: 'case-05',
-    caseNumber: 'CASE #05',
-    title: 'Deixis: Wait… This Meme Is Actually Pragmatics?',
-    date: '08 SEPT 2026',
-    category: 'Diary 5',
-    imageUrl: '/Gambar/MEME PRAGMATICS.jpeg',
-    imageCaption: 'source: @ini.abibbb on ig',
-    content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just *gini*, *gitu*, *ini*, *itulah* without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
-
-According to Yule (1996) deixis can simply be understood as **“pointing through language.”** We use certain expressions to point to people, places, things, time, or parts of a conversation. 
-
-For example, “Can you pass me that one?” while pointing at a book is **gestural deixis**, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, **symbolic deixis** depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it (Xiang et al., 2024).
-
-Deictic expressions can also have a non-deictic or **anaphoric use**, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
-
-There are also several **types of deixis**: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
-
-And now the meme makes much more sense to me. This meme uses symbolic deixis. The word *gue* (“I”) is person deixis because it points to the speaker. The words *gini* (“like this”) and *gitu* (“like that”) point to a situation, and *ini* and *itu* show the “near” and “far” contrast. The meme is not gestural because nobody is pointing at anything. We are supposed to understand the meaning from the context, but the context is missing, so the words feel empty, and that is why it is funny.
-
-Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.
-
-**References**
-- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
-- Yule, G. (1996). Pragmatics. Oxford University Press.`,
-    stampType: 'OPEN',
     xPct: 0.35,
     yPct: 1.0,
     baseRotation: -0.02,
     floatSpeed: 1.1,
     floatPhase: 3.5,
     cardType: 'photo',
-    cardImageUrl: '/Gambar/MEME SPIDER-MAN.jpeg',
+    cardImageUrl: '/Gambar/cover diary 4.jpeg',
     accentHex: 0xB22222,
   },
 
@@ -303,7 +301,7 @@ Culpeper (1996) mirrored Brown and Levinson’s politeness strategies (Xiang et 
 
 **The sentences I hear (and what they really are)**
 
-- *“Gak nanya.”* It’s positive impoliteness, because the speaker shows no interest in me, and it’s bald on record, because it’s short and direct. Its job is coercive: stop talking. Now I have a name for that small quiet feeling: my positive face, my wish to be heard, got a little hit.
+- *“Gak nanya.”* It’s positive impoliteness, because the speaker shows no interest in me, and it's bald on record, because it's short and direct. Its job is coercive: stop talking. Now I have a name for that small quiet feeling: my positive face, my wish to be heard, got a little hit.
 - *“Lu ga diajak.”* This is also positive impoliteness, in the form of excluding me from the group. It stings more than *gak nanya* because it says the exclusion out loud, and my wish to belong gets hit directly.
 - *“Ada deh.”* This one I’m not sure is rude at all. The speaker gives less information than I asked for, which Grice (1975) calls flouting the maxim of Quantity. Maybe they’re teasing me. Maybe they’re protecting their own privacy, and my question pushed too far. This part is my own thinking, not from the book. Maybe I should be kinder to people who say it.
 
@@ -350,4 +348,4 @@ Xiang, et al. (2024). *Introduction to pragmatics* (Ch. 6, pp. 115-121). Peking 
     cardImageUrl: '/Gambar/cover diary 7.jpeg',
     accentHex: 0xB22222,
   },
-]
+];
