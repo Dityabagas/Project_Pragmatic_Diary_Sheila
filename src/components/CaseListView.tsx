@@ -9,6 +9,17 @@ interface Props {
 
 const FULL_TITLE = "Sheila's Pragmatics Diary";
 
+// Clean raw markdown symbols (*, **, ***, _) from card excerpts for clean retro type display
+const cleanPreviewText = (text?: string): string => {
+  if (!text) return '';
+  return text
+    .replace(/\*\*\*([^*]+)\*\*\*/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/[_#~]/g, '')
+    .trim();
+};
+
 const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
   const [displayedTitle, setDisplayedTitle] = useState('');
   const [isDoneTyping, setIsDoneTyping] = useState(false);
@@ -101,12 +112,17 @@ const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
           const stampColour = STAMP_COLOURS[caseItem.stampType] ?? '#8B0000';
           const cardImg = caseItem.cardImageUrl || caseItem.imageUrl;
           const isOpen = caseItem.stampType === 'OPEN';
+          const isLastSingle = idx === diaryCases.length - 1;
 
           return (
             <div
               key={caseItem.id}
               onClick={() => onCaseSelect(caseItem)}
-              className="group relative cursor-pointer transform transition-all duration-300 hover:-translate-y-1.5 active:scale-[0.98] hover:shadow-2xl rounded-sm p-5 sm:p-6 flex flex-col justify-between animate-slideUp"
+              className={`group relative cursor-pointer transform transition-all duration-300 hover:-translate-y-1.5 active:scale-[0.98] hover:shadow-2xl rounded-sm p-5 sm:p-6 flex flex-col justify-between animate-slideUp ${
+                isLastSingle
+                  ? 'sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:col-start-2 lg:max-w-none'
+                  : ''
+              }`}
               style={{
                 background: 'linear-gradient(155deg, #FAF4E6 0%, #EDE2C8 100%)',
                 boxShadow: '0 10px 25px rgba(0,0,0,0.4), 0 0 0 1px rgba(187,168,122,0.4)',
@@ -188,7 +204,7 @@ const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
 
                 {/* Content Preview / Excerpt */}
                 <p className="text-xs text-[#3a2e20] leading-relaxed line-clamp-3 mb-3">
-                  {caseItem.excerpt || caseItem.content}
+                  {cleanPreviewText(caseItem.excerpt || caseItem.content)}
                 </p>
               </div>
 

@@ -1,23 +1,43 @@
 import React, { useEffect, useRef } from 'react';
 import { DiaryCase } from '../types';
+import { diaryCases } from '../data/diaryCases.data';
 import { STAMP_COLOURS } from '../constants/theme';
 
 interface Props {
   selected: DiaryCase | null;
   onClose: () => void;
+  onSelectCase?: (c: DiaryCase) => void;
 }
 
-const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
+const CaseModal: React.FC<Props> = ({ selected, onClose, onSelectCase }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Close on ESC
+  const currentIndex = selected ? diaryCases.findIndex((c) => c.id === selected.id) : -1;
+  const prevCase = currentIndex > 0 ? diaryCases[currentIndex - 1] : null;
+  const nextCase = currentIndex >= 0 && currentIndex < diaryCases.length - 1 ? diaryCases[currentIndex + 1] : null;
+
+  // Scroll dossier back to top when switching case files
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [selected?.id]);
+
+  // Keyboard navigation: Close on ESC, Navigate with Left / Right arrow keys
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+      } else if (e.key === 'ArrowLeft' && prevCase && onSelectCase) {
+        onSelectCase(prevCase);
+      } else if (e.key === 'ArrowRight' && nextCase && onSelectCase) {
+        onSelectCase(nextCase);
+      }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [onClose]);
+  }, [onClose, prevCase, nextCase, onSelectCase]);
 
   // Lock body scroll while modal open
   useEffect(() => {
@@ -42,6 +62,7 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
     >
       {/* Dossier Container */}
       <div
+        ref={scrollContainerRef}
         className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-slideUp rounded-sm"
         style={{
           background: 'linear-gradient(160deg, #F5EDD8 0%, #EDE0C4 40%, #E8D8B8 100%)',
@@ -205,6 +226,44 @@ const CaseModal: React.FC<Props> = ({ selected, onClose }) => {
             <span>STATUS: <strong style={{ color: stampColour }}>{selected.stampType}</strong></span>
             <span>DATE LOGGED: {selected.date}</span>
           </div>
+
+          {/* Previous / Next Case Dossier Navigation */}
+          {(prevCase || nextCase) && onSelectCase && (
+            <div
+              className="mt-5 pt-3 flex items-center justify-between gap-3 border-t border-dashed border-[#BBA87A]"
+              style={{ fontFamily: 'Oswald, sans-serif' }}
+            >
+              {prevCase ? (
+                <button
+                  type="button"
+                  onClick={() => onSelectCase(prevCase)}
+                  className="group flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold tracking-wider uppercase text-[#3A2A1A] hover:text-[#CC1111] bg-[#FAF4E6] hover:bg-[#EDE0C4] border border-[#C8B896] hover:border-[#CC1111]/60 rounded-xs shadow-xs transition-all duration-150 active:scale-95 cursor-pointer"
+                >
+                  <span className="text-[#CC1111] group-hover:-translate-x-1 transition-transform">←</span>
+                  <span>{prevCase.caseNumber} ({prevCase.category})</span>
+                </button>
+              ) : (
+                <div />
+              )}
+
+              <span className="text-[10px] tracking-widest text-[#8A7A6A] uppercase font-mono hidden sm:inline">
+                CASE {currentIndex + 1} OF {diaryCases.length}
+              </span>
+
+              {nextCase ? (
+                <button
+                  type="button"
+                  onClick={() => onSelectCase(nextCase)}
+                  className="group flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold tracking-wider uppercase text-[#3A2A1A] hover:text-[#CC1111] bg-[#FAF4E6] hover:bg-[#EDE0C4] border border-[#C8B896] hover:border-[#CC1111]/60 rounded-xs shadow-xs transition-all duration-150 active:scale-95 cursor-pointer ml-auto"
+                >
+                  <span>{nextCase.caseNumber} ({nextCase.category})</span>
+                  <span className="text-[#CC1111] group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+              ) : (
+                <div />
+              )}
+            </div>
+          )}
 
           {/* Bottom classification */}
           <div

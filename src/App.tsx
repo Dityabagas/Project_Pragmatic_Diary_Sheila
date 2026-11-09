@@ -62,7 +62,11 @@ const App: React.FC = () => {
       />
 
       {/* Modal for viewing individual case */}
-      <CaseModal selected={selectedCase} onClose={handleClose} />
+      <CaseModal
+        selected={selectedCase}
+        onClose={handleClose}
+        onSelectCase={handleCaseSelect}
+      />
 
       {/* Opening Welcome Memo Overlay */}
       <OpeningModal
