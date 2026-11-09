@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { DiaryCase } from '../types';
 import { diaryCases } from '../data/diaryCases.data';
 import { STAMP_COLOURS } from '../constants/theme';
@@ -7,7 +7,43 @@ interface Props {
   onCaseSelect: (c: DiaryCase) => void;
 }
 
+const FULL_TITLE = "Sheila's Pragmatics Diary";
+
 const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
+  const [displayedTitle, setDisplayedTitle] = useState('');
+  const [isDoneTyping, setIsDoneTyping] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Typewriter effect with mechanical keystroke rhythm & replay support
+  const startTypewriter = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setDisplayedTitle('');
+    setIsDoneTyping(false);
+
+    let index = 0;
+    const typeNextChar = () => {
+      if (index < FULL_TITLE.length) {
+        index++;
+        setDisplayedTitle(FULL_TITLE.slice(0, index));
+        const char = FULL_TITLE[index - 1];
+        // Mechanical typing cadence (natural variance + pauses on spaces)
+        const delay = char === ' ' ? 110 : 50 + Math.random() * 35;
+        timerRef.current = setTimeout(typeNextChar, delay);
+      } else {
+        setIsDoneTyping(true);
+      }
+    };
+
+    timerRef.current = setTimeout(typeNextChar, 180);
+  }, []);
+
+  useEffect(() => {
+    startTypewriter();
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [startTypewriter]);
+
   return (
     <div
       className="w-full h-full overflow-y-auto pt-24 pb-16 px-4 sm:px-8 max-w-6xl mx-auto"
@@ -16,20 +52,41 @@ const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
       }}
     >
       {/* Top Header Banner */}
-      <div className="text-center mb-8 animate-fadeIn">
-        <div
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 mb-3 text-xs sm:text-sm font-bold tracking-widest uppercase bg-[#1a1a1a] text-[#CC1111] border border-[#CC1111]/40 border-b-2 border-b-[#CC1111] rounded-xs shadow-md"
-          style={{ fontFamily: 'Oswald, sans-serif' }}
-        >
-          <span>📁</span>
-          <span>PRAGMATICS CASE FILE — RESEARCH LOG</span>
+      <div className="text-center mb-8 animate-fadeIn flex flex-col items-center">
+        {/* Row 1: Case file badge */}
+        <div className="mb-3">
+          <div
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-bold tracking-widest uppercase bg-[#1a1a1a] text-[#CC1111] border border-[#CC1111]/40 border-b-2 border-b-[#CC1111] rounded-xs shadow-md select-none"
+            style={{ fontFamily: 'Oswald, sans-serif' }}
+          >
+            <span>📁</span>
+            <span>PRAGMATICS CASE FILE — RESEARCH LOG</span>
+          </div>
         </div>
-        <h1
-          className="text-2xl sm:text-4xl font-bold text-[#F5E8CC] tracking-wide"
-          style={{ fontFamily: '"Special Elite", serif' }}
-        >
-          Sheila's Pragmatics Diary
-        </h1>
+
+        {/* Row 2: Headline with typewriter animation */}
+        <div className="w-full flex justify-center items-center my-1">
+          <h1
+            onClick={startTypewriter}
+            title="Klik untuk ketik ulang"
+            className="cursor-pointer select-none text-2xl sm:text-4xl font-bold text-[#F5E8CC] tracking-wide min-h-[36px] sm:min-h-[44px] inline-flex items-center justify-center transition-colors duration-200 hover:text-white"
+            style={{
+              fontFamily: '"Special Elite", serif',
+              textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)',
+            }}
+          >
+            <span>{displayedTitle}</span>
+            <span
+              className="inline-block w-[3px] sm:w-[4px] h-[1.1em] bg-[#CC1111] ml-1.5 align-middle anim-cursor-blink"
+              style={{
+                boxShadow: '0 0 8px rgba(204, 17, 17, 0.8)',
+              }}
+              aria-hidden="true"
+            />
+          </h1>
+        </div>
+
+        {/* Row 3: Subtitle instruction */}
         <p
           className="text-xs text-[#9A8A7A] mt-2 tracking-wider max-w-md mx-auto"
           style={{ fontFamily: '"Courier Prime", monospace' }}

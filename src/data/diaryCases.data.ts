@@ -30,13 +30,13 @@ Before I studied this, I thought communication was simple. You say something, th
 So, are you curious about what these diaries will discuss? Please stay with me. By the end, I promise you will never hear a simple sentence the same way again.
 
 **References**
-• Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
-• Brown, P., & Levinson, S. C. (1987). *Politeness: Some universals in language usage*. Cambridge University Press.
-• Grice, H. P. (1975). Logic and conversation. In P. Cole & J. Morgan (Eds.), *Syntax and semantics, Vol. 3: Speech acts* (pp. 41-58). Academic Press.
-• Morris, C. W. (1938). *Foundations of the theory of signs*. University of Chicago Press.
-• Searle, J. R. (1969). *Speech acts*. Cambridge University Press.
-• Thomas, J. (1983). Cross-cultural pragmatic failure. *Applied Linguistics*, 4(2), 91-112.
-• Yule, G. (1996). *Pragmatics*. Oxford University Press.`,
+- Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
+- Brown, P., & Levinson, S. C. (1987). *Politeness: Some universals in language usage*. Cambridge University Press.
+- Grice, H. P. (1975). Logic and conversation. In P. Cole & J. Morgan (Eds.), *Syntax and semantics, Vol. 3: Speech acts* (pp. 41-58). Academic Press.
+- Morris, C. W. (1938). *Foundations of the theory of signs*. University of Chicago Press.
+- Searle, J. R. (1969). *Speech acts*. Cambridge University Press.
+- Thomas, J. (1983). Cross-cultural pragmatic failure. *Applied Linguistics*, 4(2), 91-112.
+- Yule, G. (1996). *Pragmatics*. Oxford University Press.`,
     stampType: 'OPEN',
     xPct: 0.05,
     yPct: 0.0,
@@ -72,7 +72,7 @@ Even though the meme looks like someone is saying a whole lot of nothing, it act
 
 **References**
 - Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
-- Yule, G. (1996). Pragmatics. Oxford University Press.`,
+- Yule, G. (1996). *Pragmatics*. Oxford University Press.`,
     stampType: 'OPEN',
     xPct: 0.50,
     yPct: 0.0,
@@ -114,8 +114,8 @@ What I find interesting is that communication is rarely just about what is expli
 
 And honestly, that is what makes pragmatics so interesting. You can watch a scene you have seen before, notice one little line, and suddenly realize there is a whole layer of meaning hiding behind it. 
 
-**Reference** 
-Yule, G. (1996). Pragmatics. Oxford University Press.`,
+**References**
+- Yule, G. (1996). *Pragmatics*. Oxford University Press.`,
     stampType: 'OPEN',
     xPct: 0.95,
     yPct: 0.0,
@@ -156,8 +156,8 @@ Some other things blew my mind. Xiang et al. (2024) mention that Keenan (1976) a
 
 My takeaway is that meaning isn't only in the words. It is also in the context, the relationship, and the tone. Next time someone writes "Fine." "Terserah." or "bebas," I'll think before I decide what it means.
 
-**Reference**
-Xiang, M., et al. (2024). *Introduction to Pragmatics* (Peking University Linguistics Research 9). Peking University Press / Springer. https://doi.org/10.1007/978-981-99-6464-2`,
+**References**
+- Xiang, M., et al. (2024). *Introduction to Pragmatics* (Peking University Linguistics Research 9). Peking University Press / Springer. https://doi.org/10.1007/978-981-99-6464-2`,
     stampType: 'OPEN',
     xPct: 0.05,
     yPct: 1.0,
@@ -198,7 +198,7 @@ Of course, my labels are only interpretations, and speech acts change across cul
 **References**
 - Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
 - Searle, J. R. (1979). *Expression and meaning*. Cambridge University Press.
-Xiang, M., Jia, M., & Bu, X. (2024). Introduction to pragmatics (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2`,
+- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2`,
     stampType: 'OPEN',
     xPct: 0.35,
     yPct: 1.0,
@@ -322,22 +322,14 @@ Before I decide something is impolite, I want to ask four small questions. Who s
 Rude words aren’t always impolite, and polite words can still sting. Next time someone says *gak nanya* to me, I might still feel a little small. But I’ll also smile and think: positive impoliteness, bald on record, coercive. Maybe knowing the name makes it hurt a little less.
 
 **References**
-
-Culpeper, J. (1996). Towards an anatomy of impoliteness. *Journal of Pragmatics*, 25(3), 349-367.
-
-Culpeper, J. (2011). *Impoliteness: Using language to cause offence*. Cambridge University Press.
-
-Dynel, M. (2015). The landscape of impoliteness research. *Journal of Politeness Research*, 11(2), 329-354.
-
-Goffman, E. (1967). *Interaction ritual*. Doubleday.
-
-Grice, H. P. (1975). Logic and conversation. In P. Cole & J. L. Morgan (Eds.), *Syntax and semantics 3: Speech acts* (pp. 41-58). Academic Press.
-
-Leech, G. N. (1983). *Principles of pragmatics*. Longman.
-
-Suler, J. (2004). The online disinhibition effect. *CyberPsychology & Behavior*, 7(3), 321-326.
-
-Xiang, et al. (2024). *Introduction to pragmatics* (Ch. 6, pp. 115-121). Peking University Press; Springer.`,
+- Culpeper, J. (1996). Towards an anatomy of impoliteness. *Journal of Pragmatics*, 25(3), 349-367.
+- Culpeper, J. (2011). *Impoliteness: Using language to cause offence*. Cambridge University Press.
+- Dynel, M. (2015). The landscape of impoliteness research. *Journal of Politeness Research*, 11(2), 329-354.
+- Goffman, E. (1967). *Interaction ritual*. Doubleday.
+- Grice, H. P. (1975). Logic and conversation. In P. Cole & J. L. Morgan (Eds.), *Syntax and semantics 3: Speech acts* (pp. 41-58). Academic Press.
+- Leech, G. N. (1983). *Principles of pragmatics*. Longman.
+- Suler, J. (2004). The online disinhibition effect. *CyberPsychology & Behavior*, 7(3), 321-326.
+- Xiang, et al. (2024). *Introduction to pragmatics* (Ch. 6, pp. 115-121). Peking University Press; Springer.`,
     stampType: 'OPEN',
     xPct: 0.95,
     yPct: 1.0,
