@@ -38,7 +38,7 @@ const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
         </p>
       </div>
 
-      {/* Case Cards Grid: 6 Balanced Cards (3 Columns x 2 Rows) */}
+      {/* Case Cards Grid: 7 Balanced Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 pb-12">
         {diaryCases.map((caseItem, idx) => {
           const stampColour = STAMP_COLOURS[caseItem.stampType] ?? '#8B0000';

@@ -4,28 +4,39 @@ export const diaryCases: DiaryCase[] = [
   {
     id: 'case-01',
     caseNumber: 'CASE #01',
-    title: 'Deixis: Wait… This Meme Is Actually Pragmatics?',
-    date: '08 SEPT 2026',
+    title: 'What Is Pragmatics? Its Meaning, Its History, and Why We Need It',
+    date: '04 SEPT 2026',
     category: 'Diary 1',
-    imageUrl: '/Gambar/MEME PRAGMATICS.jpeg',
-    imageCaption: 'source: @ini.abibbb on ig',
-    content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just *gini*, *gitu*, *ini*, *itulah* without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
+    imageUrl: '/Gambar/cover diary 5.jpeg',
+    imageCaption: 'source: pinterest',
+    content: `When someone asks, “Can you pass the book?” Technically that’s a yes/no question about whether you’re able to, but nobody says “Yes, I can” and then sits there with folded hands. Or picture a storm hammering the roof while your friend says, “Wow, lovely weather.” The words say lovely, everyone hears the opposite, and no one needs it explained.
 
-According to Yule (1996) deixis can simply be understood as **“pointing through language.”** We use certain expressions to point to people, places, things, time, or parts of a conversation. 
+**So how do we understand things that were never actually said?**
 
-For example, “Can you pass me that one?” while pointing at a book is **gestural deixis**, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, **symbolic deixis** depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it (Xiang et al., 2024).
+The answer is **pragmatics**. Yule (1996) defines it as the study of meaning that a speaker communicates and a listener interprets, which is a fancy way of saying it’s about what people mean, not only what their words say. And you already do it perfectly, every day, with zero training.
 
-Deictic expressions can also have a non-deictic or **anaphoric use**, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
+Welcome to my diary. Before the real examples, here’s a quick map of what’s coming.
 
-There are also several **types of deixis**: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
+**What is pragmatics, exactly?** It’s meaning in use. Grammar tells you how to build a sentence, and semantics tells you what the words mean in a dictionary, but pragmatics asks a different question like what does this person mean, right now, in this situation? *“It’s cold in here”* can be a comment about the weather, a request to shut the window, or a complaint about the air conditioner. The words stay the same while the context decides which meaning you get.
 
-And now the meme makes much more sense to me. This meme uses symbolic deixis. The word *gue* (“I”) is person deixis because it points to the speaker. The words *gini* (“like this”) and *gitu* (“like that”) point to a situation, and *ini* and *itu* show the “near” and “far” contrast. The meme is not gestural because nobody is pointing at anything. We are supposed to understand the meaning from the context, but the context is missing, so the words feel empty, and that is why it is funny.
+**Where did it come from?** Morris (1938) started things by splitting the study of signs into parts, and pragmatics became the part about how people actually use signs. Then Austin (1962) surprised philosophers by arguing that words don’t just describe the world, they act on it. Searle (1969) organized that idea into a clearer theory of speech acts. Grice (1975) took a different angle and asked how we catch meaning that isn’t spoken at all. His answer was that people follow an unwritten agreement to cooperate in conversation, so when someone seems to break it, we hunt for the hidden meaning. Brown and Levinson (1987) later added politeness, which explains why we soften requests instead of blurting them out.
 
-Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.
+**Why does it matter?** Most communication is indirect, and pragmatics explains why we still understand each other. It also explains why things go wrong. A sentence that sounds polite in one culture can sound rude in another, and for EFL learners that gap is a real danger. Thomas (1983) calls it **pragmatic failure**: perfect grammar, a rich vocabulary, and still misunderstood because of how something was said. Knowing English words isn’t the same as knowing how to use English with people.
+
+After this map, I’ll test each idea on real examples: text messages, ordinary conversations, the small stuff we say without thinking.
+
+Before I studied this, I thought communication was simple. You say something, the other person receives it, done. Now it feels more like a quiet game where both sides keep guessing and filling gaps.
+
+So, are you curious about what these diaries will discuss? Please stay with me. By the end, I promise you will never hear a simple sentence the same way again.
 
 **References**
-- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
-- Yule, G. (1996). Pragmatics. Oxford University Press.`,
+• Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
+• Brown, P., & Levinson, S. C. (1987). *Politeness: Some universals in language usage*. Cambridge University Press.
+• Grice, H. P. (1975). Logic and conversation. In P. Cole & J. Morgan (Eds.), *Syntax and semantics, Vol. 3: Speech acts* (pp. 41-58). Academic Press.
+• Morris, C. W. (1938). *Foundations of the theory of signs*. University of Chicago Press.
+• Searle, J. R. (1969). *Speech acts*. Cambridge University Press.
+• Thomas, J. (1983). Cross-cultural pragmatic failure. *Applied Linguistics*, 4(2), 91-112.
+• Yule, G. (1996). *Pragmatics*. Oxford University Press.`,
     stampType: 'OPEN',
     xPct: 0.05,
     yPct: 0.0,
@@ -33,7 +44,7 @@ Even though the meme looks like someone is saying a whole lot of nothing, it act
     floatSpeed: 0.8,
     floatPhase: 0.0,
     cardType: 'photo',
-    cardImageUrl: '/Gambar/MEME SPIDER-MAN.jpeg',
+    cardImageUrl: '/Gambar/cover diary 5.jpeg',
     accentHex: 0xB22222,
   },
 
@@ -168,47 +179,36 @@ Xiang, M., Jia, M., & Bu, X. (2024). Introduction to pragmatics (Peking Universi
   {
     id: 'case-05',
     caseNumber: 'CASE #05',
-    title: 'What Is Pragmatics? Its Meaning, Its History, and Why We Need It',
-    date: '04 SEPT 2026',
+    title: 'Deixis: Wait… This Meme Is Actually Pragmatics?',
+    date: '08 SEPT 2026',
     category: 'Diary 5',
-    imageUrl: '/Gambar/cover diary 5.jpeg',
-    imageCaption: 'source: pinterest',
-    content: `When someone asks, “Can you pass the book?” Technically that’s a yes/no question about whether you’re able to, but nobody says “Yes, I can” and then sits there with folded hands. Or picture a storm hammering the roof while your friend says, “Wow, lovely weather.” The words say lovely, everyone hears the opposite, and no one needs it explained.
+    imageUrl: '/Gambar/MEME PRAGMATICS.jpeg',
+    imageCaption: 'source: @ini.abibbb on ig',
+    content: `I remember seeing memes like this quite often, and when I learned about deixis in my Pragmatics class, this meme suddenly came back to my mind. At first, I did not really understand why. I mean, the meme is basically just *gini*, *gitu*, *ini*, *itulah* without actually explaining anything. 😭 But then I realized that context is exactly what makes it understandable.
 
-**So how do we understand things that were never actually said?**
+According to Yule (1996) deixis can simply be understood as **“pointing through language.”** We use certain expressions to point to people, places, things, time, or parts of a conversation. 
 
-The answer is **pragmatics**. Yule (1996) defines it as the study of meaning that a speaker communicates and a listener interprets, which is a fancy way of saying it’s about what people mean, not only what their words say. And you already do it perfectly, every day, with zero training.
+For example, “Can you pass me that one?” while pointing at a book is **gestural deixis**, because we need a physical and perceptible element to understand what “that one” refers to. Meanwhile, **symbolic deixis** depends more on the communicative situation. If someone says, “I’ll meet you there tomorrow,” and both people already know that “there” means the library, there is no need to physically point at it (Xiang et al., 2024).
 
-Welcome to my diary. Before the real examples, here’s a quick map of what’s coming.
+Deictic expressions can also have a non-deictic or **anaphoric use**, where they refer back to something already mentioned. For example, “I was born in Bandung and have lived there ever since.” Here, “there” refers back to Bandung.
 
-**What is pragmatics, exactly?** It’s meaning in use. Grammar tells you how to build a sentence, and semantics tells you what the words mean in a dictionary, but pragmatics asks a different question like what does this person mean, right now, in this situation? *“It’s cold in here”* can be a comment about the weather, a request to shut the window, or a complaint about the air conditioner. The words stay the same while the context decides which meaning you get.
+There are also several **types of deixis**: person deixis (I, you, we), time deixis (now, today, tomorrow), place deixis (here, there), situation deixis, which points to a situation or state understood from the context, and discourse deixis, which points to part of the conversation or text.
 
-**Where did it come from?** Morris (1938) started things by splitting the study of signs into parts, and pragmatics became the part about how people actually use signs. Then Austin (1962) surprised philosophers by arguing that words don’t just describe the world, they act on it. Searle (1969) organized that idea into a clearer theory of speech acts. Grice (1975) took a different angle and asked how we catch meaning that isn’t spoken at all. His answer was that people follow an unwritten agreement to cooperate in conversation, so when someone seems to break it, we hunt for the hidden meaning. Brown and Levinson (1987) later added politeness, which explains why we soften requests instead of blurting them out.
+And now the meme makes much more sense to me. This meme uses symbolic deixis. The word *gue* (“I”) is person deixis because it points to the speaker. The words *gini* (“like this”) and *gitu* (“like that”) point to a situation, and *ini* and *itu* show the “near” and “far” contrast. The meme is not gestural because nobody is pointing at anything. We are supposed to understand the meaning from the context, but the context is missing, so the words feel empty, and that is why it is funny.
 
-**Why does it matter?** Most communication is indirect, and pragmatics explains why we still understand each other. It also explains why things go wrong. A sentence that sounds polite in one culture can sound rude in another, and for EFL learners that gap is a real danger. Thomas (1983) calls it **pragmatic failure**: perfect grammar, a rich vocabulary, and still misunderstood because of how something was said. Knowing English words isn’t the same as knowing how to use English with people.
-
-After this map, I’ll test each idea on real examples: text messages, ordinary conversations, the small stuff we say without thinking.
-
-Before I studied this, I thought communication was simple. You say something, the other person receives it, done. Now it feels more like a quiet game where both sides keep guessing and filling gaps.
-
-So, are you curious about what these diaries will discuss? Please stay with me. By the end, I promise you will never hear a simple sentence the same way again.
+Even though the meme looks like someone is saying a whole lot of nothing, it actually shows **how we use context to understand what someone is pointing to through language**. Maybe that is why this meme suddenly rings a bell when I think about deixis.
 
 **References**
-• Austin, J. L. (1962). *How to do things with words*. Oxford University Press.
-• Brown, P., & Levinson, S. C. (1987). *Politeness: Some universals in language usage*. Cambridge University Press.
-• Grice, H. P. (1975). Logic and conversation. In P. Cole & J. Morgan (Eds.), *Syntax and semantics, Vol. 3: Speech acts* (pp. 41-58). Academic Press.
-• Morris, C. W. (1938). *Foundations of the theory of signs*. University of Chicago Press.
-• Searle, J. R. (1969). *Speech acts*. Cambridge University Press.
-• Thomas, J. (1983). Cross-cultural pragmatic failure. *Applied Linguistics*, 4(2), 91-112.
-• Yule, G. (1996). *Pragmatics*. Oxford University Press.`,
+- Xiang, M., Jia, M., & Bu, X. (2024). *Introduction to pragmatics* (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2
+- Yule, G. (1996). Pragmatics. Oxford University Press.`,
     stampType: 'OPEN',
-    xPct: 0.50,
+    xPct: 0.35,
     yPct: 1.0,
     baseRotation: -0.02,
     floatSpeed: 1.1,
     floatPhase: 3.5,
     cardType: 'photo',
-    cardImageUrl: '/Gambar/cover diary 5.jpeg',
+    cardImageUrl: '/Gambar/MEME SPIDER-MAN.jpeg',
     accentHex: 0xB22222,
   },
 
@@ -249,7 +249,7 @@ Politeness is **words + context + sincerity + what people expect**. This is exac
 - Locher, M. A., & Watts, R. J. (2005). Politeness theory and relational work. *Journal of Politeness Research*, 1(1), 9-33.
 - Xiang, M., Jia, M., & Bu, X. (2024). Introduction to pragmatics (Peking University Linguistics Research, Vol. 9). Springer. https://doi.org/10.1007/978-981-99-6464-2`,
     stampType: 'OPEN',
-    xPct: 0.95,
+    xPct: 0.65,
     yPct: 1.0,
     baseRotation: 0.03,
     floatSpeed: 0.85,
@@ -257,6 +257,97 @@ Politeness is **words + context + sincerity + what people expect**. This is exac
     cardType: 'photo',
     cardImageUrl: '/Gambar/cover diary 6.jpeg',
     accentHex: 0xB22222,
-  }, 
+  },
 
+  {
+    id: 'case-07',
+    caseNumber: 'CASE #07',
+    title: 'Impoliteness 101: Why Did You Say That?',
+    date: '03 NOV 2026',
+    category: 'Diary 7',
+    imageUrl: '/Gambar/content diary 7.jpeg',
+    imageCaption: 'source: personal documentation',
+    content: `Can I tell you something a little embarrassing? I explain things too much. I know it, and I can’t stop. When I’m excited about an idea, I keep going and going, and then someone sends me two words: *gak nanya*.
+
+I always laugh, because it’s funny. But a tiny part of me goes quiet for a second. Today I finally understood why, thanks to Chapter 6 of book *"Introduction to Pragmatics"* by Xiang et al. (2024).
+
+**First, what is impoliteness?**
+
+Politeness protects *face*, the image we show to other people (Goffman, 1967). Impoliteness attacks that image on purpose. In everyday English, impoliteness simply means rude behavior, the opposite of politeness. But in pragmatics, it is more specific: an umbrella term for all intentional attacks on someone’s face (Xiang et al., 2024).
+
+But is every rude sentence the same? I wondered about that too, so let me sort them.
+
+**Three types of impoliteness**
+
+Culpeper (2011) sorts impoliteness by what it does (Xiang et al., 2024):
+
+• **Affective** shows emotion. When I stub my toe and shout a bad word, that’s me, and nobody is the target.
+
+• **Coercive** uses power to make someone act. A coach shouts “Run! Now!” The book’s example is a police officer questioning a suspect.
+
+• **Entertaining** is rudeness for fun. For example, when a friend laughs and says, “Ih, lemot banget sih kamu!”, I don’t feel hurt. I feel close to them. The book mentions “playing the dozens,” where friends tease each other’s families (Du, 2005, as cited in Xiang et al., 2024).
+
+One sentence can do all three, like Jules in *Pulp Fiction*, who shows anger, gives an order, and entertains the audience (Xiang et al., 2024).
+
+So that’s *why* people do it. What about *how*?
+
+**Five strategies of impoliteness**
+
+Culpeper (1996) mirrored Brown and Levinson’s politeness strategies (Xiang et al., 2024):
+
+1. **Bald on record**: a direct attack. “Shut up.”
+2. **Positive impoliteness**: ignoring or excluding someone, like leaving a message on “read.”
+3. **Negative impoliteness**: invading space or using taboo words, like touching someone’s things without asking.
+4. **Mock politeness**: fake politeness. “Wow, great job!” after a mistake.
+5. **Withhold politeness**: not saying thank you when expected.
+
+**The sentences I hear (and what they really are)**
+
+- *“Gak nanya.”* It’s positive impoliteness, because the speaker shows no interest in me, and it’s bald on record, because it’s short and direct. Its job is coercive: stop talking. Now I have a name for that small quiet feeling: my positive face, my wish to be heard, got a little hit.
+- *“Lu ga diajak.”* This is also positive impoliteness, in the form of excluding me from the group. It stings more than *gak nanya* because it says the exclusion out loud, and my wish to belong gets hit directly.
+- *“Ada deh.”* This one I’m not sure is rude at all. The speaker gives less information than I asked for, which Grice (1975) calls flouting the maxim of Quantity. Maybe they’re teasing me. Maybe they’re protecting their own privacy, and my question pushed too far. This part is my own thinking, not from the book. Maybe I should be kinder to people who say it.
+
+**The hearer decides**
+
+Discursive scholars say impoliteness is not inside the words. The hearer judges it using context, so speaker and hearer build it together (Xiang et al., 2024).
+
+So, *gak nanya* from a laughing friend is banter (Leech, 1983). From a stranger or a friend, it’s a real face attack. Same two words, different meaning. That explains why I laugh with some people and feel small with others. It was never only the words.
+
+**Why do people do it?**
+
+I wondered why people say things like *gak nanya* in the first place, and I think there are a few reasons. Sometimes it’s about **power**, because people with more power can be blunt without worrying about the result (Xiang et al., 2024). Sometimes it’s just **emotion**, since anger breaks our filter and the words come out before we think. Between friends, an insult can even show **closeness**, as if to say “we’re so close, I can tease you”. Online, people say even more when nobody can see them (Suler, 2004), and many people simply enjoy conflict, which is why roast shows and reality TV are so popular (Xiang et al., 2024). I think this is why I usually forgive the quick, joking *gak nanya* more than the cold, serious ones.
+
+**What I’m taking from today**
+
+Before I decide something is impolite, I want to ask four small questions. Who said it? What was it for? How was it said? And how did I take it?
+
+Rude words aren’t always impolite, and polite words can still sting. Next time someone says *gak nanya* to me, I might still feel a little small. But I’ll also smile and think: positive impoliteness, bald on record, coercive. Maybe knowing the name makes it hurt a little less.
+
+**References**
+
+Culpeper, J. (1996). Towards an anatomy of impoliteness. *Journal of Pragmatics*, 25(3), 349-367.
+
+Culpeper, J. (2011). *Impoliteness: Using language to cause offence*. Cambridge University Press.
+
+Dynel, M. (2015). The landscape of impoliteness research. *Journal of Politeness Research*, 11(2), 329-354.
+
+Goffman, E. (1967). *Interaction ritual*. Doubleday.
+
+Grice, H. P. (1975). Logic and conversation. In P. Cole & J. L. Morgan (Eds.), *Syntax and semantics 3: Speech acts* (pp. 41-58). Academic Press.
+
+Leech, G. N. (1983). *Principles of pragmatics*. Longman.
+
+Suler, J. (2004). The online disinhibition effect. *CyberPsychology & Behavior*, 7(3), 321-326.
+
+Xiang, et al. (2024). *Introduction to pragmatics* (Ch. 6, pp. 115-121). Peking University Press; Springer.`,
+    stampType: 'OPEN',
+    xPct: 0.95,
+    yPct: 1.0,
+    baseRotation: -0.03,
+    floatSpeed: 0.95,
+    floatPhase: 2.9,
+    cardType: 'photo',
+    cardImageUrl: '/Gambar/cover diary 7.jpeg',
+    accentHex: 0xB22222,
+  },
 ]

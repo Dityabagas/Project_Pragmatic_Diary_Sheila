@@ -95,8 +95,8 @@ const CrimeBoardCanvas: React.FC<Props> = ({ onCaseSelect }) => {
     const calcResponsiveScale = (width: number, height: number) => {
       // Height budget: 2 rows of cards (2 * 224) + center letters (85) + margins (110) = 643px
       const scaleH = (height - 110) / 580;
-      // Width budget: 3 columns (3 * 168) + center letters = 880px
-      const scaleW = (width - 80) / 880;
+      // Width budget: 4 columns across bottom row (4 * 168 = 672px) + gaps
+      const scaleW = (width - 80) / 940;
       return Math.min(1.15, Math.max(0.48, Math.min(scaleW, scaleH)));
     };
 
