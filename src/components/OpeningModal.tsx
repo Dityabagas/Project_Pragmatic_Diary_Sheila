@@ -3,11 +3,29 @@ import React, { useState, useEffect } from 'react';
 interface Props {
   isOpen: boolean;
   onStart: () => void;
+  onTriggerPresenter?: () => void;
 }
 
-const OpeningModal: React.FC<Props> = ({ isOpen, onStart }) => {
+const OpeningModal: React.FC<Props> = ({ isOpen, onStart, onTriggerPresenter }) => {
   const [shouldRender, setShouldRender] = useState(isOpen);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+  const badgeTapCountRef = React.useRef(0);
+  const lastBadgeTapRef = React.useRef(0);
+
+  const handleBadgeTap = () => {
+    const now = Date.now();
+    if (now - lastBadgeTapRef.current < 1200) {
+      badgeTapCountRef.current += 1;
+    } else {
+      badgeTapCountRef.current = 1;
+    }
+    lastBadgeTapRef.current = now;
+
+    if (badgeTapCountRef.current >= 3) {
+      badgeTapCountRef.current = 0;
+      onTriggerPresenter && onTriggerPresenter();
+    }
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -68,8 +86,11 @@ const OpeningModal: React.FC<Props> = ({ isOpen, onStart }) => {
           </div>
         </div>
 
-        {/* Top header badge */}
-        <div className="flex items-center justify-between border-b border-[#3a3028] pb-3 mb-4 mt-1 anim-badge-fade">
+        {/* Top header badge (Tap 3x for secret presenter controls) */}
+        <div
+          onClick={handleBadgeTap}
+          className="flex items-center justify-between border-b border-[#3a3028] pb-3 mb-4 mt-1 anim-badge-fade cursor-pointer select-none active:opacity-80 transition-opacity"
+        >
           <span
             className="text-[10px] sm:text-[11px] tracking-[2px] font-bold text-[#CC1111] uppercase"
             style={{ fontFamily: 'Oswald, sans-serif' }}

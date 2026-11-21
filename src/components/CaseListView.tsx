@@ -8,6 +8,7 @@ interface Props {
   onOpenClosing?: () => void;
   readCaseIds?: string[];
   isAllCasesRead?: boolean;
+  onTriggerPresenter?: () => void;
 }
 
 const FULL_TITLE = "Sheila's Pragmatics Diary";
@@ -28,10 +29,30 @@ const CaseListView: React.FC<Props> = ({
   onOpenClosing,
   readCaseIds = [],
   isAllCasesRead = false,
+  onTriggerPresenter,
 }) => {
   const [displayedTitle, setDisplayedTitle] = useState('');
   const [isDoneTyping, setIsDoneTyping] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Secret 3-tap counter for Presenter Mode (Mobile & Desktop)
+  const tapCountRef = useRef(0);
+  const lastTapTimeRef = useRef(0);
+
+  const handleBadgeTap = () => {
+    const now = Date.now();
+    if (now - lastTapTimeRef.current < 1200) {
+      tapCountRef.current += 1;
+    } else {
+      tapCountRef.current = 1;
+    }
+    lastTapTimeRef.current = now;
+
+    if (tapCountRef.current >= 3) {
+      tapCountRef.current = 0;
+      onTriggerPresenter && onTriggerPresenter();
+    }
+  };
 
   // Typewriter effect with mechanical keystroke rhythm & replay support
   const startTypewriter = useCallback(() => {
@@ -72,10 +93,11 @@ const CaseListView: React.FC<Props> = ({
     >
       {/* Top Header Banner */}
       <div className="text-center mb-8 animate-fadeIn flex flex-col items-center">
-        {/* Row 1: Case file badge */}
+        {/* Row 1: Case file badge (Tap 3x for secret presenter controls) */}
         <div className="mb-3">
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-bold tracking-widest uppercase bg-[#1a1a1a] text-[#CC1111] border border-[#CC1111]/40 border-b-2 border-b-[#CC1111] rounded-xs shadow-md select-none"
+            onClick={handleBadgeTap}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-bold tracking-widest uppercase bg-[#1a1a1a] text-[#CC1111] border border-[#CC1111]/40 border-b-2 border-b-[#CC1111] rounded-xs shadow-md select-none cursor-pointer active:scale-95 transition-transform"
             style={{ fontFamily: 'Oswald, sans-serif' }}
           >
             <span>📁</span>
