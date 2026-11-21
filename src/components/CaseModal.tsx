@@ -7,9 +7,19 @@ interface Props {
   selected: DiaryCase | null;
   onClose: () => void;
   onSelectCase?: (c: DiaryCase) => void;
+  onOpenClosing?: () => void;
+  isAllCasesRead?: boolean;
+  readCaseIds?: string[];
 }
 
-const CaseModal: React.FC<Props> = ({ selected, onClose, onSelectCase }) => {
+const CaseModal: React.FC<Props> = ({
+  selected,
+  onClose,
+  onSelectCase,
+  onOpenClosing,
+  isAllCasesRead = false,
+  readCaseIds = [],
+}) => {
   const overlayRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -31,13 +41,18 @@ const CaseModal: React.FC<Props> = ({ selected, onClose, onSelectCase }) => {
         onClose();
       } else if (e.key === 'ArrowLeft' && prevCase && onSelectCase) {
         onSelectCase(prevCase);
-      } else if (e.key === 'ArrowRight' && nextCase && onSelectCase) {
-        onSelectCase(nextCase);
+      } else if (e.key === 'ArrowRight') {
+        if (nextCase && onSelectCase) {
+          onSelectCase(nextCase);
+        } else if (!nextCase && onOpenClosing && isAllCasesRead) {
+          onClose();
+          onOpenClosing();
+        }
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [onClose, prevCase, nextCase, onSelectCase]);
+  }, [onClose, prevCase, nextCase, onSelectCase, onOpenClosing, isAllCasesRead]);
 
   // Lock body scroll while modal open
   useEffect(() => {
@@ -253,12 +268,34 @@ const CaseModal: React.FC<Props> = ({ selected, onClose, onSelectCase }) => {
               {nextCase ? (
                 <button
                   type="button"
-                  onClick={() => onSelectCase(nextCase)}
+                  onClick={() => onSelectCase && onSelectCase(nextCase)}
                   className="group flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold tracking-wider uppercase text-[#3A2A1A] hover:text-[#CC1111] bg-[#FAF4E6] hover:bg-[#EDE0C4] border border-[#C8B896] hover:border-[#CC1111]/60 rounded-xs shadow-xs transition-all duration-150 active:scale-95 cursor-pointer ml-auto"
                 >
                   <span>{nextCase.caseNumber} ({nextCase.category})</span>
                   <span className="text-[#CC1111] group-hover:translate-x-1 transition-transform">→</span>
                 </button>
+              ) : onOpenClosing ? (
+                isAllCasesRead ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onClose();
+                      onOpenClosing();
+                    }}
+                    className="group flex items-center gap-2 px-3.5 py-1.5 text-xs font-bold tracking-wider uppercase text-white bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 border border-red-500 rounded-xs shadow-md transition-all duration-150 active:scale-95 cursor-pointer ml-auto"
+                  >
+                    <span>📂 CASE CONCLUSION & EPILOGUE</span>
+                    <span className="text-white group-hover:translate-x-1 transition-transform">→</span>
+                  </button>
+                ) : (
+                  <div
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-bold tracking-wider uppercase text-[#8A7A6A] bg-[#221d19] border border-[#4a3e35] rounded-xs select-none ml-auto"
+                    style={{ fontFamily: 'Oswald, sans-serif' }}
+                    title="Examine all 7 cases to unlock the Epilogue"
+                  >
+                    <span>🔒 EPILOGUE ({readCaseIds.length}/7 EXAMINED)</span>
+                  </div>
+                )
               ) : (
                 <div />
               )}

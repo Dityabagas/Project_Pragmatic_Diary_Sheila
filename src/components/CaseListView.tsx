@@ -5,6 +5,9 @@ import { STAMP_COLOURS } from '../constants/theme';
 
 interface Props {
   onCaseSelect: (c: DiaryCase) => void;
+  onOpenClosing?: () => void;
+  readCaseIds?: string[];
+  isAllCasesRead?: boolean;
 }
 
 const FULL_TITLE = "Sheila's Pragmatics Diary";
@@ -20,7 +23,12 @@ const cleanPreviewText = (text?: string): string => {
     .trim();
 };
 
-const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
+const CaseListView: React.FC<Props> = ({
+  onCaseSelect,
+  onOpenClosing,
+  readCaseIds = [],
+  isAllCasesRead = false,
+}) => {
   const [displayedTitle, setDisplayedTitle] = useState('');
   const [isDoneTyping, setIsDoneTyping] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -156,17 +164,32 @@ const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
                     </span>
                   </div>
 
-                  {/* Stamp */}
-                  <div
-                    className="text-[10px] font-bold tracking-widest px-2 py-0.5 border"
-                    style={{
-                      borderColor: stampColour,
-                      color: stampColour,
-                      transform: 'rotate(-5deg)',
-                      fontFamily: 'Oswald, sans-serif',
-                    }}
-                  >
-                    {caseItem.stampType}
+                  {/* Stamp & Examined Status */}
+                  <div className="flex items-center gap-1.5 flex-wrap justify-end">
+                    {readCaseIds.includes(caseItem.id) && (
+                      <span
+                        className="text-[9px] font-bold tracking-widest px-1.5 py-0.5 border rounded-xs uppercase select-none"
+                        style={{
+                          borderColor: 'rgba(50, 168, 82, 0.7)',
+                          color: '#15803d',
+                          background: 'rgba(50, 168, 82, 0.1)',
+                          fontFamily: 'Oswald, sans-serif',
+                        }}
+                      >
+                        ✓ EXAMINED
+                      </span>
+                    )}
+                    <div
+                      className="text-[10px] font-bold tracking-widest px-2 py-0.5 border"
+                      style={{
+                        borderColor: stampColour,
+                        color: stampColour,
+                        transform: 'rotate(-5deg)',
+                        fontFamily: 'Oswald, sans-serif',
+                      }}
+                    >
+                      {caseItem.stampType}
+                    </div>
                   </div>
                 </div>
 
@@ -225,6 +248,77 @@ const CaseListView: React.FC<Props> = ({ onCaseSelect }) => {
           );
         })}
       </div>
+
+      {/* Case Conclusion / Final Epilogue Access Banner */}
+      {onOpenClosing && (
+        isAllCasesRead ? (
+          <div className="mt-2 mb-12 text-center animate-fadeIn">
+            <button
+              type="button"
+              onClick={onOpenClosing}
+              className="group inline-flex items-center gap-3 px-6 py-3.5 rounded-xs text-xs sm:text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-xl cursor-pointer"
+              style={{
+                background: 'linear-gradient(145deg, #1f1b17 0%, #110f0d 100%)',
+                border: '1px solid rgba(204, 17, 17, 0.65)',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.65), 0 0 16px rgba(204,17,17,0.2)',
+                fontFamily: 'Oswald, sans-serif',
+                color: '#F5E8CC',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#FF3333';
+                e.currentTarget.style.boxShadow = '0 10px 32px rgba(0,0,0,0.85), 0 0 24px rgba(204,17,17,0.55)';
+                e.currentTarget.style.color = '#FFFFFF';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(204, 17, 17, 0.65)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.65), 0 0 16px rgba(204,17,17,0.2)';
+                e.currentTarget.style.color = '#F5E8CC';
+              }}
+            >
+              <span className="text-base text-[#CC1111] group-hover:rotate-12 transition-transform">📂</span>
+              <span>ALL 7 CASES COMPLETED — OPEN FINAL EPILOGUE</span>
+              <span className="text-[#CC1111] group-hover:translate-x-1.5 transition-transform font-bold">→</span>
+            </button>
+          </div>
+        ) : (
+          <div className="mt-2 mb-12 flex flex-col items-center justify-center animate-fadeIn px-4">
+            <div
+              className="px-5 py-3.5 rounded-xs border text-center max-w-[440px] w-full"
+              style={{
+                background: 'rgba(15, 13, 11, 0.85)',
+                borderColor: 'rgba(204, 17, 17, 0.3)',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
+              }}
+            >
+              <div
+                className="flex items-center justify-between gap-3 text-[11px] font-bold tracking-wider text-[#A69582] uppercase mb-1.5"
+                style={{ fontFamily: 'Oswald, sans-serif' }}
+              >
+                <span className="flex items-center gap-1.5">
+                  <span>🔍</span>
+                  <span>INVESTIGATION PROGRESS</span>
+                </span>
+                <span className="text-[#CC1111] font-mono font-bold">
+                  {readCaseIds.length} / 7 EXAMINED
+                </span>
+              </div>
+              {/* Progress Bar */}
+              <div className="w-full h-1.5 bg-[#25201c] rounded-full overflow-hidden mb-2">
+                <div
+                  className="h-full bg-gradient-to-r from-red-800 to-red-500 transition-all duration-500 rounded-full"
+                  style={{ width: `${Math.min(100, (readCaseIds.length / 7) * 100)}%` }}
+                />
+              </div>
+              <p
+                className="text-[11px] text-[#7A6A5A] italic"
+                style={{ fontFamily: '"Courier Prime", monospace' }}
+              >
+                Examine all 7 cases on the board to unlock the final investigation epilogue.
+              </p>
+            </div>
+          </div>
+        )
+      )}
     </div>
   );
 };

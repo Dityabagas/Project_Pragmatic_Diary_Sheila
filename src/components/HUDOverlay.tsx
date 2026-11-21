@@ -5,9 +5,17 @@ interface Props {
   viewMode: 'board' | 'list';
   onViewModeChange: (mode: 'board' | 'list') => void;
   onOpenNote?: () => void;
+  onOpenClosing?: () => void;
+  isAllCasesRead?: boolean;
 }
 
-const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange, onOpenNote }) => {
+const HUDOverlay: React.FC<Props> = ({
+  viewMode,
+  onViewModeChange,
+  onOpenNote,
+  onOpenClosing,
+  isAllCasesRead,
+}) => {
   const [legendOpen, setLegendOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
@@ -67,28 +75,53 @@ const HUDOverlay: React.FC<Props> = ({ viewMode, onViewModeChange, onOpenNote })
         </button>
       </div>
 
-      {/* Bottom-left: Legend toggle (Only shown in board view) */}
+      {/* Bottom-left: Legend & Epilogue toggle (Only shown in board view) */}
       {viewMode === 'board' && (
         <div className="fixed bottom-4 left-4 sm:bottom-5 sm:left-5 z-40">
-          <button
-            id="legend-toggle-btn"
-            onClick={() => setLegendOpen((v) => !v)}
-            style={{
-              background: 'rgba(10,8,6,0.88)',
-              border: '1px solid rgba(204,17,17,0.5)',
-              backdropFilter: 'blur(8px)',
-              padding: '7px 12px',
-              fontFamily: 'Oswald, sans-serif',
-              fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '2px',
-              color: '#CC1111',
-              cursor: 'pointer',
-              transition: 'background 0.2s',
-            }}
-          >
-            {legendOpen ? '▼ LEGEND' : '▶ LEGEND'}
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              id="legend-toggle-btn"
+              onClick={() => setLegendOpen((v) => !v)}
+              style={{
+                background: 'rgba(10,8,6,0.88)',
+                border: '1px solid rgba(204,17,17,0.5)',
+                backdropFilter: 'blur(8px)',
+                padding: '7px 12px',
+                fontFamily: 'Oswald, sans-serif',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '2px',
+                color: '#CC1111',
+                cursor: 'pointer',
+                transition: 'background 0.2s',
+              }}
+            >
+              {legendOpen ? '▼ LEGEND' : '▶ LEGEND'}
+            </button>
+
+            {onOpenClosing && isAllCasesRead && (
+              <button
+                id="epilogue-btn"
+                onClick={onOpenClosing}
+                style={{
+                  background: 'rgba(10,8,6,0.88)',
+                  border: '1px solid rgba(204,17,17,0.5)',
+                  backdropFilter: 'blur(8px)',
+                  padding: '7px 12px',
+                  fontFamily: 'Oswald, sans-serif',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  letterSpacing: '2px',
+                  color: '#F5E8CC',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s, color 0.2s, border-color 0.2s',
+                }}
+                className="hover:text-[#CC1111] hover:border-[#CC1111] transition-all"
+              >
+                📂 EPILOGUE
+              </button>
+            )}
+          </div>
 
           {legendOpen && (
             <div
